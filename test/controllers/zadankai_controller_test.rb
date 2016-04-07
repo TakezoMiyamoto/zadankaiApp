@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ZadanaiControllerTest < ActionController::TestCase
+class ZadankaiControllerTest < ActionController::TestCase
   test "should get home" do
     get :home
     assert_response :success

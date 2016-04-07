@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row form">
+    <div class="col-xs-4 col-xs-offset-4">
+      <h2 style="text-align:center;">Sign up</h2><br/>
+      <%= link_to user_omniauth_authorize_path(:facebook), class: "btn btn-block btn-social btn-facebook" do %>
+        <span class='fa fa-facebook'></span>Sign up with Facebook
+      <% end %><br/>
+      <h4 style="text-align: center;">or</h4>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= devise_error_messages! %>
+        <div class="field">
+          <%= f.label :username %> <em>(6 characters maximum)</em><br>
+          <%= f.text_field :username, autofocus: true, class: 'input form-control' %>
+        </div>
+        
+        <div class="field">
+          <%= f.label :avatar, "プロフィール画像" %>
+          <%= f.file_field :avatar, class: "form-control" %>
+        </div>
+        
+      
+        <div class="field">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, class: 'input form-control' %>
+        </div>
+      
+        <div class="field">
+          <%= f.label :password %>
+          <% if @validatable %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", class: 'input form-control' %>
+        </div>
+      
+        <div class="field">
+          <%= f.label :password_confirmation %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: 'input form-control' %>
+        </div><br/>
+      
+        <div class="actions">
+          <%= f.submit "Sign up", class: 'btn btn-primary withripple' %>
+        </div>
+      <% end %><br/>
+      <div>
+        <%= render "devise/shared/links" %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

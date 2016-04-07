@@ -1,0 +1,2 @@
+module ZadankaiHelper
+end

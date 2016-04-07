@@ -1,0 +1,420 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import 'bootstrap-datetimepicker';
+@import "font-awesome";
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400,700");
+@import url("//fonts.googleapis.com/css?family=Pacifico:400,700");
+@import url("//fonts.googleapis.com/css?family=Poiret+One:400,700");
+
+html {
+  position: relative;
+  min-height: 100%;
+  
+}
+
+body {
+    font-family: "Open Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
+    padding-top: 70px;
+    margin-bottom: 51px;
+    min-height: 2000px;
+    background-color: #F7F6F6;
+    font-size: 15px;
+    color: #292F33;
+}
+
+
+#brand-logo {
+    color:#F6A2BF;
+}
+#brand-logo:hover {
+    color:#FF99FF;
+}
+
+
+.login-container{
+    position: relative;
+    width: 300px;
+    margin: 80px auto;
+    padding: 20px 40px 40px;
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ccc;
+}
+
+#output{
+    position: absolute;
+    width: 300px;
+    top: -75px;
+    left: 0;
+    color: #fff;
+}
+
+#output.alert-success{
+    background: rgb(25, 204, 25);
+}
+
+#output.alert-danger{
+    background: rgb(228, 105, 105);
+}
+
+
+.login-container::before,.login-container::after{
+    content: "";
+    position: absolute;
+    width: 100%;height: 100%;
+    top: 3.5px;left: 0;
+    background: #fff;
+    z-index: -1;
+    -webkit-transform: rotateZ(4deg);
+    -moz-transform: rotateZ(4deg);
+    -ms-transform: rotateZ(4deg);
+    border: 1px solid #ccc;
+
+}
+
+.login-container::after{
+    top: 5px;
+    z-index: -2;
+    -webkit-transform: rotateZ(-2deg);
+     -moz-transform: rotateZ(-2deg);
+      -ms-transform: rotateZ(-2deg);
+
+}
+
+.avatar{
+    width: 100px;height: 100px;
+    margin: 10px auto 30px;
+    border-radius: 100%;
+    border: 2px solid #aaa;
+    background-size: cover;
+}
+
+.form-box input{
+    width: 100%;
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+    height:40px;
+    border: 1px solid #ccc;;
+    background: #fafafa;
+    transition:0.2s ease-in-out;
+
+}
+
+.form-box input:focus{
+    outline: 0;
+    background: #eee;
+}
+
+.form-box input[type="text"]{
+    border-radius: 5px 5px 0 0;
+    text-transform: lowercase;
+}
+
+.form-box input[type="password"]{
+    border-radius: 0 0 5px 5px;
+    border-top: 0;
+}
+
+.form-box button.login{
+    margin-top:15px;
+    padding: 10px 20px;
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+
+.jumbotron {
+        margin-top: -20px;
+        height: 630px;
+        background-image: url(/images/fan.jpeg);
+        background-size: cover;
+        background-position: center 60%;
+        background-repeat: no-repeat;
+        
+    h1 {
+        font-family: 'Poiret One', cursive;
+        font-weight: bold;
+        margin-top: 20px;
+        text-align: center;
+        color: #F6A2BF;
+    }
+    p {
+        font-family: 'Poiret One', cursive;
+        font-weight: bold;
+        margin-top: 40px;
+        text-align: center;
+        color: #F6A2BF; 
+    }
+    
+    .btn {
+        margin-top: 280px;
+    }
+}
+
+#ready-for-jumbotron {
+    margin-top: -20px;
+    height: 630px;
+    background-image: url(/images/kazuki_umiganijinmibe.jpg);
+    background-size: cover;
+    background-position: center 60%;
+    background-repeat: no-repeat;
+    h1 {
+        font-family: 'Poiret One', cursive;
+        font-weight: bold;
+        margin-top: 120px;
+        color: #F6A2BF;
+    }
+    
+    h2 {
+        font-family: 'Poiret One', cursive;
+        font-weight: bold;
+        margin-top: 30px;
+        color: #F6A2BF;
+        text-align: center;
+    }
+    h3 {
+        font-family: 'Poiret One', cursive;
+        font-weight: bold;
+        margin-top: 240px;
+        color: #F6A2BF;
+        text-align: center;
+        text-shadow: 1px 1px 2px #FF88FF;
+    }
+    p {
+        font-family: 'Poiret One', cursive;
+        font-weight: bold;
+        margin-top: 40px;
+        text-align: center;
+        color: #F6A2BF; 
+    }
+    
+    .btn {
+        margin-bottom: 100px;
+    }
+    
+}
+
+@media (max-width: 767px){
+   .jumbotron {
+    height: 550px;
+    background-image: url(/images/fan.jpeg);
+    background-size: cover;
+   }
+}
+
+.home-contents {
+    background-color: #FFB6C1;
+    width: 100%;
+    height: 320px;
+    margin-top: -30px;
+    padding-top: 30px;
+    
+    
+    h2 {
+        text-align: center;
+    }
+    
+    p {
+        text-align: center;
+        font-size: 18px;
+    }
+}
+
+#readyfor-contents {
+    background-color: #FFEEFF;
+    margin-top: -10px;
+    width: 100%;
+    height: 550px;
+    margin-bottom: 40px;
+    
+    
+    
+    h2 {
+        padding-top: 40px;
+        text-align: center;
+    }
+    
+    h4 {
+        margin-top: 40px;
+    }
+    
+    p {
+        text-align: center;
+        margin-top: 120px;
+    }
+}
+
+#about-zadankai {
+    margin-top: 20px;
+    width: 100%;
+    height: 550px;
+    padding: 20px 40px;
+    
+    h2 {
+        
+    }
+    
+    p {
+        line-height: 180%;
+    }
+    
+}
+
+.icon_image {
+    width: 40px;
+    height: 40px;
+    display: table-cell;
+    border-radius: 40px;
+  -webkit-border-radius: 40px;
+  -moz-border-radius: 40px;
+  }
+  
+  
+.comment1-1  {  
+    width: 652.5px;  
+    padding: 0 10px;  
+    margin-bottom: 20px;  
+    position: relative;  
+}  
+.comment1-1 .imgL    {  
+    float: left;  
+    text-align: center; 
+    
+}  
+.comment1-1 .imgL img    {  
+     
+    padding: 3px;  
+    margin-bottom: 5px; 
+    width: 60px;
+    height: 60px;
+    display: table-cell;
+    border-radius: 60px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+}  
+.comment1-1 .commentContents {  
+    width: 550px;  
+    float: right;  
+    background: #EEE;  
+    border: 1px solid #CCC;  
+    border-radius: 5px;
+    padding: 12px 19px;  
+    margin-left: 5px;
+}  
+.comment1-1 .commentContents p   {  
+    margin-bottom: 1.2em;  
+}  
+.comment1-1 p.img    {  
+    position: absolute;  
+    left: 110px;  
+    top: 20px;  
+}  
+.comment1-1 p.data   {  
+    color: #999;  
+    text-align: right;  
+    margin-bottom:0;  
+}  
+.comment1-1:after    { height:0; visibility: hidden; content: ".";   display: block; clear: both; }  
+
+.comment2-1  {  
+    width: 652.5px;  
+    padding: 0 10px;  
+    margin-bottom: 20px;  
+    position: relative;  
+}  
+.comment2-1 .imgL    {  
+    float: right;
+    text-align: center; 
+    
+}  
+.comment2-1 .imgL img    {  
+     
+    padding: 3px;  
+    margin-bottom: 5px; 
+    width: 60px;
+    height: 60px;
+    display: table-cell;
+    border-radius: 60px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+}  
+.comment2-1 .commentContents {  
+    width: 550px;  
+    float: left;  
+    background: #EEE;  
+    border: 1px solid #CCC;  
+    border-radius: 5px;
+    padding: 12px 19px;  
+    margin-left: 5px;
+}  
+.comment2-1 .commentContents p   {  
+    margin-bottom: 1.2em;  
+}  
+.comment2-1 p.img    {  
+    position: absolute;  
+    right: 110px;  
+    top: 20px;  
+}  
+.comment2-1 p.data   {  
+    color: #999;  
+    text-align: right;  
+    margin-bottom:0;  
+}  
+.comment2-1:after    { height:0; visibility: hidden; content: ".";   display: block; clear: both; }  
+
+

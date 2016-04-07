@@ -1,0 +1,2 @@
+module ZadanaiHelper
+end

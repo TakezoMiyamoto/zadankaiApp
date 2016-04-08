@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row form">
+    <div class="col-xs-4 col-xs-offset-4">
+      <h2>プロフィール編集</h2>
+    
+      <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="field">
+          <%= f.label :username, "お名前" %> <em>(最大6文字)</em><br>
+          <%= f.text_field :username, autofocus: true, class: 'input form-control' %>
+        </div>
+        
+        <div class="field">
+          <%= f.label :avatar, "プロフィール画像" %>
+          <%= f.file_field :avatar, class: "form-control" %>
+        </div>
+        
+      
+        <div class="field">
+          <%= f.label :email, "メールアドレス" %><br />
+          <%= f.email_field :email, autofocus: true, class: 'input form-control' %>
+        </div>
+      
+        <div class="field">
+          <%= f.label :パスワード %>
+          <% if @validatable %>
+          <em>(<%= @minimum_password_length %> characters minimum)</em>
+          <% end %><br />
+          <%= f.password_field :password, autocomplete: "off", class: 'input form-control' %>
+        </div>
+      
+        <div class="field">
+          <%= f.label :password_confirmation, "パスワード確認" %><br />
+          <%= f.password_field :password_confirmation, autocomplete: "off", class: 'input form-control' %>
+        </div><br/>
+      
+        <div class="actions">
+          <%= f.submit "プロフィールを更新する", class: 'btn btn-primary withripple' %>
+        </div>
+      <% end %><br/>
+      <div>
+
+      </div>
+    </div>
+  </div>
+</div>

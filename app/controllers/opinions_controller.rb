@@ -5,7 +5,7 @@ class OpinionsController < ApplicationController
         @project = Project.find(params[:project_id])
         @conference = @project.conferences.find(params[:conference_id])
         @opinion = @conference.opinions.build(opinion_params)
-        @opinion.opinion_user = current_user.nickname
+        @opinion.opinion_user = current_user.username
         @opinion.avatar = current_user.avatar.url
         @opinion.remote_avatar = current_user.remote_avatar
 

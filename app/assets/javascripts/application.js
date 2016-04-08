@@ -13,9 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require ckeditor/init
 //= require moment
 //= require bootstrap-datetimepicker
-//= require turbolinks
 //= require_tree .
 
 var data = {'data-date-format': 'YYYY-MM-DD hh:mm' };

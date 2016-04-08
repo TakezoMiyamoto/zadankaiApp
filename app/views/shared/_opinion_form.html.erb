@@ -1,0 +1,10 @@
+<%= form_for([@project, @conference, @conference.opinions.build] ) do |f| %>
+
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+        <%= f.label :body, "コメント" %><br />
+        <%= f.text_area :body, cols: 60, rows: 8, class: "form-control" %>
+        
+    </div><br/>
+        <%= f.submit "コメント作成！", class: "btn btn-primary" %>
+<% end %>

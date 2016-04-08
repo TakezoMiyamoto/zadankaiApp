@@ -1,1 +1,100 @@
-  <h1>座談会ShowPage</h1>
+<% content_for :head do %>
+  <meta name="title" content="<%=@project.project_name%>">
+  <meta name="description" content="<%=@project.project_name %>に関する情報です。この商品を欲しい人、持ってる人を表示しています">
+<% end %>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2">
+      <%  %>
+    </div>
+    <div class= "col-sm-8">
+      <div class="title">
+        <h2><%= @conference.title %></h2>
+      </div>
+      <% if @project.youtube_url.present? %>
+        <div class= "youtube-container">
+          <%= embed(@conference.youtube_url) %>
+        </div>
+      <% else %>
+        <% # %>
+      <% end %>
+      <div>
+        <h3>内容</h3>
+        <%== @conference.description %>
+      </div>
+      
+      <section class="comment_form">
+          <%= render 'shared/opinion_form' %>
+      </section>
+      <h3>コメント一覧</h3>
+      <% if @conference.opinions.count == 0 %>
+        <p>現在コメントはありません。</p>
+      <% end %>
+        <% if @conference.opinions.present? %>
+        <% @conference.opinions.order("created_at asc").each do |opinion| %>
+          <% if opinion.opinion_user == @project.user.username %>
+            <div class="comment2-1">
+              <div class="imgL">
+                <% if opinion.remote_avatar != nil %>
+                  <p><%= image_tag(opinion.remote_avatar , alt: opinion.opinion_user) %><br/>
+                  <%= opinion.opinion_user %></p>
+              <% else %>
+                  <p><%= image_tag(opinion.avatar , class: "icon_image", alt: opinion.opinion_user) %>
+                  <%= opinion.opinion_user %></p>
+              <% end %>
+              </div>
+              <div class="commentContents">  
+                <p><%= simple_format opinion.body %></p>  
+                <p class="data"><%= opinion.created_at.to_s(:default) %></p>
+                <% if current_user != nil %>
+                <% if current_user.username == opinion.opinion_user%>
+                    <%= link_to "編集", edit_project_conference_opinion_path(@project, @conference, opinion), class: "btn btn-large btn-default" %>
+                    <%= link_to "削除", project_conference_opinion_path(@project, @conference, opinion), method: :delete, class: "btn btn-large btn-danger", data: { confirm: "You sure?" } %>
+                <% end %>
+              <% end %>
+                <!--/ .commentContents-->
+              </div>  
+            </div><!-- .comment2-1 -->
+          <% else %>
+            <div class="comment1-1">
+              <div class="imgL">
+                <% if opinion.remote_avatar != nil %>
+                  <p><%= image_tag(opinion.remote_avatar , alt: opinion.opinion_user) %><br/>
+                  <%= opinion.opinion_user %></p>
+              <% else %>
+                  <p><%= image_tag(opinion.avatar , class: "icon_image", alt: opinion.opinion_user) %>
+                  <%= opinion.opinion_user %></p>
+              <% end %>
+              </div>
+              <div class="commentContents">  
+                <p><%= simple_format opinion.body %></p>  
+                <p class="data"><%= opinion.created_at.to_s(:default) %></p>
+                <% if current_user != nil %>
+                <% if current_user.username == opinion.opinion_user%>
+                    <%= link_to "編集", edit_project_conference_opinion_path(@project, @conference, opinion), class: "btn btn-large btn-default" %>
+                    <%= link_to "削除", project_conference_opinion_path(@project, @conference, opinion), method: :delete, class: "btn btn-large btn-danger", data: { confirm: "You sure?" } %>
+                <% end %>
+              <% end %>
+                <!--/ .commentContents-->
+              </div>  
+            </div><!-- .comment1-1 -->
+          <% end %>
+      <% end %>
+      <% end %>
+      
+      <div class="project-button">
+        <% if current_user == @conference.user %>
+            <%= link_to "座談会にいく", project_conferences_path(@project, @conferece), class: "btn btn-large btn-primary" %>
+            <%= link_to "この会議を削除", project_conferences_path(@project, @conferece), method: :delete, class: "btn btn-large btn-danger", data: { confirm: "You sure?" } %>
+            <%= link_to "この会議の編集", edit_project_conference_path(@project, @conferece), class: "btn btn-large btn-danger" %>
+        <% end %>
+      </div>
+      
+    </div>  
+    <div class="col-sm-2">
+      
+    </div>
+  </div>
+</div>

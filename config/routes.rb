@@ -9,7 +9,9 @@ Rails.application.routes.draw do
 
   resources :projects do
     resources :comments
-    resources :conferences
+    resources :conferences do
+      resources :opinions
+    end
   end
 
   resources :relationships, only: [:create, :destroy]

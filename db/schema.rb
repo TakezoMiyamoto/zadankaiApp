@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160408103046) do
+ActiveRecord::Schema.define(version: 20160408103047) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",    limit: 255, null: false
@@ -28,6 +28,20 @@ ActiveRecord::Schema.define(version: 20160408103046) do
 
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
+
+  create_table "comments", force: :cascade do |t|
+    t.integer  "user_id",       limit: 4
+    t.integer  "project_id",    limit: 4
+    t.string   "commenter",     limit: 255
+    t.text     "body",          limit: 65535
+    t.string   "avatar",        limit: 255
+    t.string   "remote_avatar", limit: 255
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "comments", ["project_id"], name: "index_comments_on_project_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.integer  "user_id",      limit: 4
@@ -68,5 +82,7 @@ ActiveRecord::Schema.define(version: 20160408103046) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "comments", "projects"
+  add_foreign_key "comments", "users"
   add_foreign_key "projects", "users"
 end

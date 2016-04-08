@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-2 projrct-user-profile">
+      <% if @project.brand_name.present? %>
+      <h4><%= @project.brand_name %></h4>
+      <% end %>
+      <% if @project.user != nil %>
+      <h4><%= @project.user.username %></h4>
+        <% if @project.user.remote_avatar != nil %>
+          <%= image_tag(@project.user.remote_avatar , alt: @project.user.username) %>
+        <% else %>
+          <%= image_tag(@project.user.avatar.url , alt: @project.user.username) %>
+        <% end %>
+      <% end %>
+      <h5>プロジェクト完了予定日</h5>
+      <% if @project.period_date.present? %>
+        <h5><%= @project.period_date %></h5>
+        <% if @d2 >= 0 %>
+        <h5>終了まであと<strong><%= @d2 %></strong>日</h5>
+        <% else %>
+        <h5>終了</h5>
+        <% end %>
+      <% end %>
+      <div>
+        <% if current_user == @project.user && current_user != nil %>
+            <%= link_to "プロジェクトの編集", edit_project_path(@project), class: "btn btn-large btn-default" %>
+        <% end %>
+      </div>
+    </div>
+    <div class= "col-sm-7">
+      <div class="title">
+       <!-- user join form -->
+
+        <h2><%= @project.project_name %></h2>
+      </div>
+      <% if @project.youtube_url.present? %>
+        <div class= "youtube-container">
+        <%= embed(@project.youtube_url) %>
+        </div>
+      <% else %>
+        <%= image_tag(@project.main_image) %>
+      <% end %>
+
+        <h3>どんなプロジェクトなの？</h3>
+        <%== @project.description %>
+    </div>
+    <div class="col-sm-3">
+
+    </div>
+  </div>
+</div>

@@ -43,6 +43,67 @@
 
         <h3>どんなプロジェクトなの？</h3>
         <%== @project.description %>
+         <% if current_user != nil %>
+      <section class="comment_form">
+          <%= render 'shared/comment_form' %>
+      </section>
+      <% end %>
+      <h3>コメント一覧</h3>
+      <% if @project.comments.count == 0 %>
+        <p>現在コメントはありません。</p>
+      <% end %>
+        <% if @project.comments.present? %>
+        <% @project.comments.order("created_at asc").each do |comment| %>
+        <!-- コメントがプロジェクトオーナーの場合は右表示 -->
+          <% if comment.commenter == @project.user.username %>
+            <div class="comment2-1">
+              <div class="imgL">
+                <% if comment.remote_avatar != nil %>
+                  <p><%= image_tag(comment.remote_avatar , alt: comment.commenter) %><br/>
+                  <%= comment.commenter %></p>
+                <% else %>
+                  <p><%= image_tag(comment.avatar , alt: comment.commenter) %><br/>
+                  <%= comment.commenter %></p>
+                <% end %>
+              </div>
+              <div class="commentContents">
+                <p><%= simple_format comment.body %></p>
+                <p class="data"><%= comment.created_at.to_s(:default) %></p>
+                <% if current_user != nil %>
+                  <% if current_user.username == comment.commenter%>
+                    <%= link_to "編集", edit_project_comment_path(@project, comment), class: "btn btn-large btn-default" %>
+                    <%= link_to "削除", project_comment_path(@project, comment), method: :delete, class: "btn btn-large btn-danger", data: { confirm: "You sure?" } %>
+                  <% end %>
+                <% end %>
+                <!--/ .commentContents-->
+              </div>  
+            </div><!-- .comment1-1 -->
+          <% else %><!-- その他の人は左表示 -->
+            <div class="comment1-1">
+              <div class="imgL">
+                <% if comment.remote_avatar != nil %>
+                  <p><%= image_tag(comment.remote_avatar , alt: comment.commenter) %><br/>
+                  <%= comment.commenter %></p>
+                <% else %>
+                  <p><%= image_tag(comment.avatar , alt: comment.commenter) %><br/>
+                  <%= comment.commenter %></p>
+                <% end %>
+              </div>
+              <div class="commentContents">
+                <p><%= simple_format comment.body %></p>
+                <p class="data"><%= comment.created_at.to_s(:default) %></p>
+                <% if current_user != nil %>
+                  <% if current_user.username == comment.commenter%>
+                    <%= link_to "編集", edit_project_comment_path(@project, comment), class: "btn btn-large btn-default" %>
+                    <%= link_to "削除", project_comment_path(@project, comment), method: :delete, class: "btn btn-large btn-danger", data: { confirm: "You sure?" } %>
+                  <% end %>
+                <% end %>
+                <!--/ .commentContents-->
+              </div> 
+            </div><!-- .comment1-1 -->
+          <% end %>
+       <% end %>
+       <% end %>
     </div>
     <div class="col-sm-3">
 

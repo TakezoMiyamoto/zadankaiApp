@@ -10,6 +10,9 @@ module ZadankaiApp
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
+
+    # Relathinship (join , unjoin)
+    config.action_view.embed_authenticity_token_in_remote_forms = true
     # -- all .rb files in that directory are automatically loaded.
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.

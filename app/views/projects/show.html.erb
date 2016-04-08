@@ -30,6 +30,9 @@
     <div class= "col-sm-7">
       <div class="title">
        <!-- user join form -->
+       <% if current_user != nil && current_user != @project.user %>
+         <%= render 'users/join_form' %>
+       <% end %>
 
         <h2><%= @project.project_name %></h2>
       </div>

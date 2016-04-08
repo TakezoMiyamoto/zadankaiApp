@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160408103047) do
+ActiveRecord::Schema.define(version: 20160408103048) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",    limit: 255, null: false
@@ -58,6 +58,17 @@ ActiveRecord::Schema.define(version: 20160408103047) do
 
   add_index "projects", ["user_id", "created_at"], name: "index_projects_on_user_id_and_created_at", using: :btree
   add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
+
+  create_table "relationships", force: :cascade do |t|
+    t.integer  "joiner_user_id",    limit: 4
+    t.integer  "joined_project_id", limit: 4
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "relationships", ["joined_project_id"], name: "index_relationships_on_joined_project_id", using: :btree
+  add_index "relationships", ["joiner_user_id", "joined_project_id"], name: "index_relationships_on_joiner_user_id_and_joined_project_id", unique: true, using: :btree
+  add_index "relationships", ["joiner_user_id"], name: "index_relationships_on_joiner_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255,   default: "", null: false

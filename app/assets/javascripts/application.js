@@ -12,5 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
+//= require bootstrap-sprockets
+//= require ckeditor/init
+//= require moment
+//= require bootstrap-datetimepicker
 //= require_tree .
+
+var data = {'data-date-format': 'YYYY-MM-DD hh:mm' };
+$(function(){
+  $('.datepicker').attr(data);
+  $('.datepicker').datetimepicker();
+});

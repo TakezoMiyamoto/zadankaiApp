@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   root 'zadankai#home'
   get 'zadankai/about'
+
+  get 'projects/readyfor'
+  get 'projects/new'
+  resources :projects
 
    devise_for :users, :controllers => {
     :sessions      => "users/sessions",
     :registrations => "users/registrations",
     :passwords     => "users/passwords",
     :omniauth_callbacks => "users/omniauth_callbacks"
-    
   }
 
   resources :users

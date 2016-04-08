@@ -1,0 +1,53 @@
+<div id="ready-for-jumbotron">
+    <div class="container">
+      <h1 style="text-align: center;">Zadankai</h1>
+      <p style="text-align: center;">ファンファンファン</p>
+      <h3>How to start your own project?</h3><br/>
+      <h2>⬇︎</h2>
+    </div><!-- /.container -->
+</div><!-- /.jumbotron -->
+
+<div id="readyfor-contents" class="container">
+  <h2>使い方はかんたん。<br/>
+  プロジェクトを作成してスタートするだけ。</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <h4>1. プロジェクトを作成</h4>
+    </div>
+    <div class="col-md-4">
+      <h4>2. 座談会を開催して、プロジェクトを創り上げていく。</h4>
+    </div>
+    <div class="col-md-4">
+      <h4>3. プロジェクト完了報告！</h4>
+    </div>
+  </div>
+  <% if user_signed_in?  %>
+    <p><%= link_to "プロジェクトを作成する", projects_new_path, class: "btn btn-large btn-primary" %></p>
+  <% else %>
+    <p><%= link_to "まずは新規会員登録する", new_user_registration_path, class: "post btn btn-large btn-primary" %></p>
+  <% end %>
+ 
+</div>
+<div id="about" class="container">
+  
+</div>
+<div id="about-zadankai">
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      
+    </div>
+    <div class="col-md-6">
+      <h2>Zadankaiとは？</h2>
+      <p>こんなものを創りたい。こんなイベントを企画したい。なにか楽しいことをしたい。<br/>
+      そういったあなたの心の中にある思いを形にするお手伝いをしたい。<br/>
+      そんな思いから、この「Zadankai」はスタートしました。<br/>
+      気軽に心の中の想いをシェアして、それに賛同してくれる仲間（ファン）に出会い、企画を実現させる。<br/>
+      どんどんアイデアをシェアしよう。そのアイデアをみんなで育てて実現させよう。<br/>
+      </p>
+    </div>
+    
+  </div>
+  
+</div>
+</div>

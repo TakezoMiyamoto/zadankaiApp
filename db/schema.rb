@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160408103048) do
+ActiveRecord::Schema.define(version: 20160408103050) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",    limit: 255, null: false
@@ -42,6 +42,21 @@ ActiveRecord::Schema.define(version: 20160408103048) do
 
   add_index "comments", ["project_id"], name: "index_comments_on_project_id", using: :btree
   add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+
+  create_table "conferences", force: :cascade do |t|
+    t.integer  "user_id",     limit: 4
+    t.integer  "project_id",  limit: 4
+    t.string   "title",       limit: 255
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "youtube_url", limit: 255
+  end
+
+  add_index "conferences", ["project_id", "created_at"], name: "index_conferences_on_project_id_and_created_at", using: :btree
+  add_index "conferences", ["project_id"], name: "index_conferences_on_project_id", using: :btree
+  add_index "conferences", ["user_id", "created_at"], name: "index_conferences_on_user_id_and_created_at", using: :btree
+  add_index "conferences", ["user_id"], name: "index_conferences_on_user_id", using: :btree
 
   create_table "projects", force: :cascade do |t|
     t.integer  "user_id",      limit: 4

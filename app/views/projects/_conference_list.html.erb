@@ -1,0 +1,16 @@
+    <h4>開かれてる座談会</h4>
+    <% if @project.conferences.present? %>
+      <div class="panel panel-info">
+        <% @project.conferences.order("created_at desc").each do |conference| %>
+          <div class="panel-heading">
+            <p><%= conference.created_at.to_s(:default) %></p>
+          </div>
+          <div class="panel-body">
+            <p><%= link_to conference.title, project_conference_path(@project, conference) %></p>
+          </div>
+        <% end %>
+      </div>
+
+    <% else current_user == @project.user %>
+      <p>現在ひらかれている座談会はありません</p>
+    <% end %>

@@ -6,6 +6,7 @@ class User < ActiveRecord::Base
 
   has_many :projects
   has_many :comments
+  has_many :conferences
 
   #relationships
   has_many :joining_relationships, class_name:  "Relationship",

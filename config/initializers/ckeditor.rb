@@ -6,7 +6,8 @@ Ckeditor.setup do |config|
   # available as additional gems.
   require "ckeditor/orm/active_record"
   config.assets_languages = ['ja']
-
+  config.assets_plugins = ['image', 'smiley']
+  config.cdn_url = "//cdn.ckeditor.com/4.5.6/standard/ckeditor.js"
   # Allowed image file types for upload.
   # Set to nil or [] (empty array) for all file types
   # By default: %w(jpg jpeg png gif tiff)

@@ -5,9 +5,35 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   has_many :projects
+  has_many :comments
+
+  #relationships
+  has_many :joining_relationships, class_name:  "Relationship",
+                                     foreign_key: "joiner_user_id",
+                                     dependent:   :destroy
+  has_many :joined_projects, through: :joining_relationships, source: :joined_project
 
   mount_uploader :avatar, AvatarUploader
 
+
+  # relationships methods
+  # プロジェクトにジョインする
+  def join(project)
+    joining_relationships.find_or_create_by(joined_project_id: project.id)
+  end
+
+  # ジョインしているプロジェクトをアンジョインする
+  def unjoin(project)
+    joining_relationship = joining_relationships.find_by(joined_project_id: project.id)
+    joining_relationship.destroy if joining_relationship
+  end
+
+  # あるプロジェクトにジョインしているかどうか？
+  def joining?(project)
+    joined_projects.include?(project)
+  end
+
+  # facebook oath
   def self.find_for_oauth(auth)
     user = User.where(uid: auth.uid, provider: auth.provider).first
 

@@ -6,10 +6,12 @@ Rails.application.routes.draw do
 
   get 'projects/readyfor'
   get 'projects/new'
-  
+
   resources :projects do
     resources :comments
   end
+
+  resources :relationships, only: [:create, :destroy]
 
    devise_for :users, :controllers => {
     :sessions      => "users/sessions",

@@ -2,6 +2,12 @@
     <div class="container">
       <h1>Zadankai</h1>
       <p>Have a fun! Have a good conversation!!!</p>
+      <% if user_signed_in?  %>
+        <p><%= link_to "プロジェクトをはじめるよう！", projects_readyfor_path, class: "btn btn-large btn-primary" %></p>
+      <% else %>
+        <p><%= link_to "新規会員登録する", new_user_registration_path, class: "post btn btn-large btn-primary" %></p>
+      <% end %>
+      <div class="fb-like" data-href="<%= "http://#{request.host+request.fullpath}" %>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
     </div><!-- /.container -->
 </div><!-- /.jumbotron -->
 <div class="home-contents">

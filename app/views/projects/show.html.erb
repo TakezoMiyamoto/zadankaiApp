@@ -44,6 +44,8 @@
         <%= image_tag(@project.main_image) %>
       <% end %>
 
+      <!-- facebook いいね -->
+      <div class="fb-like" data-href="<%= "http://#{request.host+request.fullpath}" %>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
         <h3>どんなプロジェクトなの？</h3>
         <%== @project.description %>
          <% if current_user != nil %>

@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407135559) do
+ActiveRecord::Schema.define(version: 20160408004801) do
+
+  create_table "projects", force: :cascade do |t|
+    t.integer  "user_id",      limit: 4
+    t.string   "project_name", limit: 255
+    t.string   "brand_name",   limit: 255
+    t.string   "category",     limit: 255
+    t.string   "main_image",   limit: 255
+    t.string   "youtube_url",  limit: 255
+    t.text     "description",  limit: 65535
+    t.datetime "period_date"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "projects", ["user_id", "created_at"], name: "index_projects_on_user_id_and_created_at", using: :btree
+  add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255,   default: "", null: false
@@ -36,4 +52,5 @@ ActiveRecord::Schema.define(version: 20160407135559) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "projects", "users"
 end

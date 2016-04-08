@@ -1,0 +1,14 @@
+<%= form_for([@project, @project.conferences.build] ) do |f| %>
+
+    <%= render 'shared/error_messages', object: f.object %>
+    <div class="field">
+      <%= f.label :title, "タイトル" %>
+      <%= f.text_field :title, class: "form-control" %>
+      <%= f.label :youtube_url, "Youtube動画 URL" %>
+      <%= f.text_field :youtube_url, :placeholder => "https://www.youtube.com/watch?v=xxxxxxxxxxx" ,class: "form-control" %></br>
+      <%= f.label :description, class: 'control-label' %>
+      <%= f.cktext_area :description, class: 'form-control' %></br>
+      <%= f.submit "進捗ほうこく作成!", class: "btn btn-large btn-primary form-control" %>
+
+    </div>
+<% end %>

@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     def create
         @project = Project.find(params[:project_id])
         @comment = @project.comments.build(comment_params)
-        @comment.commenter = current_user.nickname
+        @comment.commenter = current_user.username
         @comment.avatar = current_user.avatar.url
         @comment.remote_avatar = current_user.remote_avatar
 

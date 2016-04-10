@@ -460,4 +460,23 @@ footer {
     text-align: left;
  }
 
+/* term */
+.term-wrapper {
+    border: 1px solid #C0C0C0;
+        margin: 80px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 3px #c0c0c0;
+        background-color: #F5F5F5;
+}
 
+.contents {
+    padding: 30px;
+    font-size: 13px;
+    h1 {
+    text-align: center;
+    padding-bottom: 10px;
+    }
+    h4 {
+    font-weight: bold;
+    }
+}

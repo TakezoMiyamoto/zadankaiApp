@@ -12,4 +12,6 @@ class Project < ActiveRecord::Base
   has_many :joiner_users, through: :joining_relationships, source: :joiner_user
 
   mount_uploader :main_image, MainImageUploader
+
+  paginates_per 12
 end

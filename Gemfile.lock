@@ -398,6 +398,7 @@ DEPENDENCIES
   font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   mini_magick
   momentjs-rails (>= 2.9.0)
   mysql2 (>= 0.3.13, < 0.5)

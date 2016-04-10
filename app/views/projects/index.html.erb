@@ -1,5 +1,28 @@
 <div class="container">
+  <div class="col-xs-6 col-xs-offset-3">
+    <form class="form-inline">
+      <div class="form-group">
+          <%= search_form_for @q do |f| %>
+          <!-- start 特定の文字列で始まる商品名で検索 -->
+          <%= f.label :project_name_cont, "フリーワードで検索する", class: "control-label"  %>
+          <%= f.search_field :project_name_cont, class: "form-control" %>
+          <%= f.submit "検索する", class: "btn btn-large btn-primary form-control" %>
+          <% end %>
+          <%= search_form_for @q do |f| %><br/>
+          <!-- カテゴリーで検索 -->
+          <%= f.label :category_cont, "カテゴリーから検索する", class: "control-label"  %>
+          <%= f.select :category_cont,["選択してください", "アート","写真","プロダクト","スポーツ","お笑い","ファッション","ダンス","演劇・舞台","映像・映画","本・漫画","旅行","ビジネス","テクノロジー","社会貢献","その他"], class: "form-control" %>
+          <%= f.submit "検索する", class: "btn btn-sm btn-primary form-control" %>
+          <% end %>
+      </div>
+    </form>
+  </div>
+</div><br/>
 
-  <%= render 'projects/list' , projects: @projects %>
-
+<div class="container">
+  <% if @q == nil %>
+    <%= render 'projects/list' , projects: @projects %>
+  <% else %>
+    <%= render 'projects/list' , projects: @searchedProjects %>
+  <% end %>
 </div>

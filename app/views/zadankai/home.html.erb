@@ -1,6 +1,6 @@
 <div class="jumbotron">
     <div class="container">
-      <h1>Zadankai</h1>
+      <h1><%= image_tag("/images/zadankai2.gif") %></h1>
       <p>Have a fun! Have a good conversation!!!</p>
       <% if user_signed_in?  %>
         <p><%= link_to "プロジェクトをはじめるよう！", projects_readyfor_path, class: "btn btn-large btn-primary" %></p>

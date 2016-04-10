@@ -5,6 +5,7 @@ class ProjectsController < ApplicationController
   require 'date'
 
   def readyfor
+    @title = "はじめよう！"
   end
 
   def index
@@ -12,11 +13,14 @@ class ProjectsController < ApplicationController
     #検索
     @q = Project.search(params[:q])
     @searchedProjects = @q.result(distinct: true)
+
+    @title = "プロジェクト一覧"
   end
 
 
   def new
     @project = Project.new
+    @title = "新規プロジェクト作成"
   end
 
   def create

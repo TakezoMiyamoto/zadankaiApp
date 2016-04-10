@@ -1,11 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ZadanKai</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <% if @project_title.present? %>
+    <title><%= "#{@project_title} - Zadankai" %></title>
+  <% elsif @userName.present? %>
+    <title><%= "#{@userName} - Zadankai" %></title>
+  <% elsif @conference_title.present? %>
+    <title><%= "#{@conference_title} - Zadankai" %></title>
+  <% elsif @title.present? %>
+    <title><%= "#{@title} - Zadankai" %></title>
+  <% else %>
+    <title><%= 'Zadankai' %></title>
+  <% end %>
+  <!-- #meta information -->
+  <%= yield :head %>
+
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag 'application',  'Ckeditor.cdn_url' => true %>
   <%= csrf_meta_tags %>
+
 </head>
 <body>
 <!-- アラートを入れる-->

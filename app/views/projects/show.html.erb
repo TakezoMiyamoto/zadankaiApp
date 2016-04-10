@@ -1,3 +1,8 @@
+<% content_for :head do %>
+  <meta name="title" content="<%=@project.project_name %>">
+  <meta name="description" content="「<%= @project.project_name %>」に関する情報です">
+<% end %>
+
 <div class="container">
   <div class="row">
     <div class="col-sm-2 projrct-user-profile">

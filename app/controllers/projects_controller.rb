@@ -9,9 +9,9 @@ class ProjectsController < ApplicationController
   end
 
   def index
-    @projects = Project.order(created_at: :desc)
+    @projects = Project.order(created_at: :desc).page(params[:page])
     #検索
-    @q = Project.search(params[:q])
+    @q = Project.page(params[:page]).search(params[:q])
     @searchedProjects = @q.result(distinct: true)
 
     @title = "プロジェクト一覧"
@@ -29,7 +29,8 @@ class ProjectsController < ApplicationController
       flash[:success] = "新規プロジェクトを作成しました"
       redirect_to projects_path
     else
-      render 'zadankai/home'
+      flash[:danger] = "プロジェクト作成に失敗しました。"
+      render 'projects/readyfor'
     end
   end
 

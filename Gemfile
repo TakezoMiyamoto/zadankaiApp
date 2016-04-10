@@ -54,6 +54,9 @@ gem 'ransack'
 # 管理画面
 gem 'activeadmin', github: 'gregbell/active_admin'
 
+# ページ
+gem 'kaminari'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

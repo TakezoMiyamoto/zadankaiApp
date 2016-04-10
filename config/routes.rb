@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get 'projects/new'
 
   resources :projects do
+    get 'page/:page', :action => :index, :on => :collection
     resources :comments
     resources :conferences do
       resources :opinions

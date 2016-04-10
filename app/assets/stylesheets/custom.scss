@@ -180,7 +180,7 @@ body {
 
 .jumbotron {
         margin-top: -20px;
-        height: 630px;
+        height: 650px;
         background-image: url(/images/fan.jpeg);
         background-size: cover;
         background-position: center 60%;
@@ -494,4 +494,8 @@ footer {
     h4 {
     font-weight: bold;
     }
+}
+
+.pagenation {
+    text-align: center;
 }

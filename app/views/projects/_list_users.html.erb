@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="container-inner inner-default clearfix">
+    <% projects.order("created_at desc").each do |project| %>
+      <div class="item-box-mini">
+        <div class="image">
+          <div class="img-wrap">
+            <% if project.main_image.present? %>
+              <%= link_to image_tag(project.main_image.url , alt: project.project_name), project %>
+            <% else %>
+              <%= link_to image_tag("no-image.png" , alt: project.project_name), project %>
+            <% end %>
+          </div>
+        </div>
+        <div class="detail">
+          <p class="title">
+            <%= project.project_name %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

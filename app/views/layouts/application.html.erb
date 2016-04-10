@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-<% if @project_title.present? %>
-   <title><%= "#{@project_title} - Zadankai" %></title>
+  <% if @project_title.present? %>
+    <title><%= "#{@project_title} - Zadankai" %></title>
   <% elsif @userName.present? %>
-   <title><%= "#{@userName} - Zadankai" %></title>
+    <title><%= "#{@userName} - Zadankai" %></title>
   <% elsif @conference_title.present? %>
-   <title><%= "#{@conference_title} - Zadankai" %></title>
+    <title><%= "#{@conference_title} - Zadankai" %></title>
+  <% elsif @title.present? %>
+    <title><%= "#{@title} - Zadankai" %></title>
   <% else %>
-  <title><%= 'Zadankai' %></title>
+    <title><%= 'Zadankai' %></title>
   <% end %>
-  <% #meta information %>
+  <!-- #meta information -->
   <%= yield :head %>
 
   <%= stylesheet_link_tag    'application', media: 'all' %>

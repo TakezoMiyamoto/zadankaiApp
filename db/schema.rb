@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160408103051) do
+ActiveRecord::Schema.define(version: 20160410014333) do
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",    limit: 255, null: false
@@ -119,6 +119,10 @@ ActiveRecord::Schema.define(version: 20160408103051) do
     t.text     "avatar",                 limit: 65535
     t.text     "remote_avatar",          limit: 65535
     t.string   "username",               limit: 255
+    t.string   "place",                  limit: 255
+    t.date     "birth"
+    t.string   "gender",                 limit: 255
+    t.text     "introduce",              limit: 65535
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

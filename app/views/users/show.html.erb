@@ -1,10 +1,38 @@
+<% content_for :head do %>
+  <meta name="title" content="<%=@user.username %>">
+  <meta name="description" content="<%=@user.username %>のマイページ">
+<% end %>
+
 <div class="container">
-  <p><%= @user.username %></p>
-  <div class="user-profile">
-    <% if @user.remote_avatar != nil %>
-      <p><%= link_to image_tag(@user.remote_avatar , alt: @user.username), user_path(@user) %></p>
-    <% else %>
-      <p><%= link_to image_tag(@user.avatar.url , alt: @user.username), user_path(@user) %></p>
-    <% end %>
-  </div>
+    <div class="row">
+        <div class="col-md-3 user-profile">
+            <h4><%= @user.username %></h4>
+            <% if @user.remote_avatar != nil %>
+                <p><%= link_to image_tag(@user.remote_avatar , alt: @user.username), user_path(@user) %></p>
+            <% else %>
+                <p><%= link_to image_tag(@user.avatar.url , alt: @user.username), user_path(@user) %></p>
+            <% end %>
+            <p>自分のプロジェクト  <%= @projects.length %>個</p>
+            <p>参加しているプロジェクト  <%= @joinProjects.length %>個</p>
+            <% if @user == current_user %>
+                <%= link_to "プロフィールの編集", edit_user_path(@user), class: "btn btn-large btn-info" %>
+            <% end %>
+
+        </div>
+        <div class="col-md-9 user-profile-projects">
+            <h4><%= @user.username %>さんのプロジェクト</h4>
+            <% if @projects.any? %>
+            <%= render 'projects/list_users' , projects: @projects %>
+            <% else %>
+            <p>現在、自分のプロジェクトはありません。</p>
+            <% end %>
+
+            <h4>参加しているプロジェクト</h4>
+            <% if @joinProjects.any? %>
+            <%= render 'projects/list_users', projects: @joinProjects %>
+            <% else %>
+            <p>現在、参加しているプロジェクトはありません。</p>
+            <% end %>
+        </div>
+    </div>
 </div>

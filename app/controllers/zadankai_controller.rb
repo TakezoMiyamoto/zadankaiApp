@@ -12,4 +12,12 @@ class ZadankaiController < ApplicationController
   def readyfor
     @title = "プロジェクトをはじめる"
   end
+
+  def term
+
+  end
+
+  def privacy
+
+  end
 end

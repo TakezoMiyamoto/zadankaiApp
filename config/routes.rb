@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   mount Ckeditor::Engine => '/ckeditor'
   root 'zadankai#home'
   get 'zadankai/about'
+  get 'zadankai/term'
+  get 'zadankai/privacy'
 
   get 'projects/readyfor'
   get 'projects/new'

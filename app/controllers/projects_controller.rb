@@ -29,7 +29,8 @@ class ProjectsController < ApplicationController
       flash[:success] = "新規プロジェクトを作成しました"
       redirect_to projects_path
     else
-      render 'zadankai/home'
+      flash[:danger] = "プロジェクト作成に失敗しました。"
+      render 'projects/readyfor'
     end
   end
 

@@ -47,6 +47,9 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.17.37'
 # editor
 gem 'ckeditor'
 
+# search
+gem 'ransack'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

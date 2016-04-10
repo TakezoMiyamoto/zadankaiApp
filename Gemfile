@@ -37,6 +37,7 @@ gem 'carrierwave'
 
 gem 'mini_magick'
 
+# Amazon S3を使用
 gem 'fog'
 
 # date time picker
@@ -49,6 +50,9 @@ gem 'ckeditor'
 
 # search
 gem 'ransack'
+
+# 管理画面
+gem 'activeadmin', github: 'gregbell/active_admin'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

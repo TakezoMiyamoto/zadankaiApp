@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :authenticate_user!, only: [:create, :edit, :update, :destroy]
   before_action :set_user, only:[:show, :edit, :update, :joiner]
   before_action :matched_user, only:[:edit, :update]
 
@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(edit_user_params)
-      flash[:success] = "Your profile was updated!"
+      flash[:success] = "プロフィールjは更新されました"
       redirect_to @user
     else
       render 'edit'

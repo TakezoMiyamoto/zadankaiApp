@@ -18,6 +18,9 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
 
 
+  # validation;
+  validates :username, presence: true
+
   # relationships methods
   # プロジェクトにジョインする
   def join(project)

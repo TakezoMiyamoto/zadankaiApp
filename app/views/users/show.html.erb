@@ -14,6 +14,10 @@
             <% end %>
             <p>自分のプロジェクト  <%= @projects.length %>個</p>
             <p>参加しているプロジェクト  <%= @joinProjects.length %>個</p>
+            <p>生年月日: <%= @user.birth %></p>
+            <p>性別: <%= @user.gender %></p>
+            <p>現在地: <%= @user.place %></p>
+            <p>自己紹介: <%= @user.introduce %></p>
             <% if @user == current_user %>
                 <%= link_to "プロフィールの編集", edit_user_path(@user), class: "btn btn-large btn-info" %>
             <% end %>

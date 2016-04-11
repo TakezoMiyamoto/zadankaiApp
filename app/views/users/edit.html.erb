@@ -9,7 +9,6 @@
       <h2 style="text-align: center;">プロフィール編集</h2>
 
       <%= form_for(@user) do |f| %>
-        <%= render 'shared/error_messages', object: f.object %>
         <div class="field">
           <%= f.label :username, "お名前" %> <em>(最大6文字)</em><br>
           <%= f.text_field :username, autofocus: true, class: 'input form-control' %>
@@ -46,11 +45,6 @@
                   default:           Date.new(1989, 1, 1),
                   date_separator:    '%s'),
               '年 ', '月 ') + '日' %>
-        </div><br/>
-
-        <div class="field">
-          <%= f.label :introduce, "自己紹介" %><br>
-          <%= f.text_area :introduce, cols: 40, rows: 3, autofocus: true, class: 'form-control' %>
         </div><br/>
 
         <div class="field">

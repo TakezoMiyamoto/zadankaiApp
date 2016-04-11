@@ -59,7 +59,7 @@ class ProjectsController < ApplicationController
   def update
     @project = Project.find(params[:id])
     if @project.update(edit_project_params)
-      flash[:success] = "Your project was updated!"
+      flash[:success] = "プロジェクト内容が更新されました"
       redirect_to @project
     else
       render 'zadankai/home'
@@ -70,7 +70,7 @@ class ProjectsController < ApplicationController
     @project = current_user.projects.find_by(id: params[:id])
     return redirect_to root_url if @project.nil?
     @project.destroy
-    flash[:success] = "Project deleted"
+    flash[:success] = "プロジェクトは削除されました"
     redirect_to projects_path
   end
 

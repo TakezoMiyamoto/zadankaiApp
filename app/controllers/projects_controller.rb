@@ -62,7 +62,7 @@ class ProjectsController < ApplicationController
       flash[:success] = "Your project was updated!"
       redirect_to @project
     else
-      render 'edit'
+      render 'zadankai/home'
     end
   end
 

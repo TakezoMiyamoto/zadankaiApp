@@ -25,10 +25,10 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(edit_user_params)
-      flash[:success] = "プロフィールjは更新されました"
+      flash[:success] = "プロフィールは更新されました"
       redirect_to @user
     else
-      render 'edit'
+      render 'zadankai/home'
     end
   end
 

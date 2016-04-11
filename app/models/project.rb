@@ -3,8 +3,7 @@ class Project < ActiveRecord::Base
   has_many :comments
   has_many :conferences
 
-  validates :project_name, :category, presence: true
-  validates :period_date, presence: true
+  
   #relationships
   has_many :joining_relationships, class_name:  "Relationship",
                                     foreign_key: "joined_project_id",

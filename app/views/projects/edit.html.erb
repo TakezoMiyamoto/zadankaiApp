@@ -17,7 +17,7 @@
           <%= f.text_field :brand_name, class: "form-control" %><br/>
           
           <%= f.label :project_name, "プロジェクト名" %>
-          <%= f.text_field :project_name, class: "form-control" %>
+          <%= f.text_field :project_name, class: "form-control" %><br/>
           
           <%= f.label :period_date, "プロジェクト終了予定日" %>
           <div class='input-group date datepicker'>
@@ -26,12 +26,12 @@
           </div><br/>
     
           <%= f.label :main_image, "メイン画像" %>
-          <%= f.file_field :main_image, class: "form-control" %>
+          <%= f.file_field :main_image, class: "form-control" %><br/>
     
           <%= f.label :youtube_url, "Youtube動画 URL" %>
           <%= f.text_field :youtube_url, :placeholder => "https://www.youtube.com/watch?v=xxxxxxxxxxx" ,class: "form-control" %><br/>
           
-          <%= f.label :description, class: 'control-label' %>
+          <%= f.label :description, "プロジェクト詳細", class: 'control-label' %>
           <%= f.cktext_area :description, class: 'form-control' %><br/>
           <%= f.submit "プロジェクト情報の更新!", class: "btn btn-large btn-primary form-control" %>
           

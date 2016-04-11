@@ -13,6 +13,8 @@
       <h4><%= @project.user.username %></h4>
         <% if @project.user.remote_avatar != nil %>
           <%= image_tag(@project.user.remote_avatar , alt: @project.user.username) %>
+        <% elsif @project.user.remote_avatar == nil && @pfoject.user.avatar == nil%>
+          <%=  %>
         <% else %>
           <%= image_tag(@project.user.avatar.url , alt: @project.user.username) %>
         <% end %>
@@ -47,7 +49,7 @@
         </div>
       <% else %>
         <%= image_tag(@project.main_image) %>
-      <% end %>
+      <% end %><br/>
 
       <!-- facebook いいね -->
       <div class="fb-like" data-href="<%= "http://#{request.host+request.fullpath}" %>" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>

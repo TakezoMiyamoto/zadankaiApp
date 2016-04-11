@@ -24,13 +24,12 @@ class UsersController < ApplicationController
   end
 
   def update
-    
       if @user.errors[:base].empty? and @user.update(edit_user_params)
       sign_in(@user, :bypass => true)
       flash[:success] = "プロフィールは更新されました"
       redirect_to @user
     else
-      render 'edit'
+      render 'zadankai/home'
     end
   end
 

@@ -3,10 +3,11 @@
   <meta name="description" content="新しいプロジェクトを作成しよう">
 <% end %>
 
-<h1 style="text-align: center;">プロジェクトを作成する</h1>
+
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-3 edit-project">
+  <h1 style="text-align: center;">プロジェクトを作成する</h1>
     <%= simple_form_for(@project) do |f| %>
     <!-- error messages -->
     <%= f.error_notification %>

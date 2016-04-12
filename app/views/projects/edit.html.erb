@@ -3,11 +3,9 @@
   <meta name="description" content="<%=@project.project_name %>の情報の編集">
 <% end %>
 
-
-<h1 style="text-align: center;">プロジェクト編集</h1>
-
 <div class="row">
-    <div class="col-md-6 col-md-offset-3">
+    <div class="col-md-6 col-md-offset-3 edit-project">
+      <h1 style="text-align: center;">プロジェクト編集</h1>
       <%= simple_form_for(@project) do |f| %>
           <%= f.input :category, as: :select, collection: @categories, include_blank: '選択してください', label: 'カテゴリー', class: "form-control" %>
 

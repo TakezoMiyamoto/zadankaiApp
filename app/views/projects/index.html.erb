@@ -22,15 +22,19 @@
       </div>
     </form>
   </div>
-</div><br/>
 
-<div class="container">
   <% if @q == nil %>
-    <%= render 'projects/list' , projects: @projects %>
-    <div class="pagenation"><%= paginate @projects %><div>
+  <div class="container">
+    <div class="container">
+      <%= render 'projects/list' , projects: @projects %>
+      <%= paginate @projects, class: 'pagenation' %>
+    </div>
   <% else %>
-    <%= render 'projects/list' , projects: @searchedProjects %>
-    <div class="pagenation"><%= paginate @searchedProjects %><div>
-  <% end %>
-
+    <div class="container">
+      <%= render 'projects/list' , projects: @searchedProjects %>
+      <div class="pagenation"><%= paginate @searchedProjects %><div>
+    <% end %>
+  </div>
+  </div>
+</div>
 </div>

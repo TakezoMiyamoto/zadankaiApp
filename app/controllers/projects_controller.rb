@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
 
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :project_owner, only: [:edit, :update, :destroy]
+  before_action :category_set, only: [:new, :index, :edit]
   require 'date'
 
   def readyfor
@@ -20,7 +21,6 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
-    @categories = ["アート","写真","プロダクト","スポーツ","お笑い","ファッション","ダンス","演劇・舞台","映像・映画","本・漫画","旅行","ビジネス","テクノロジー","社会貢献","その他"]
     @title = "新規プロジェクト作成"
   end
 
@@ -76,6 +76,11 @@ class ProjectsController < ApplicationController
 
 
   private
+
+  def category_set
+    @categories = ["アート","写真","プロダクト","スポーツ","お笑い","ファッション","ダンス","演劇・舞台","映像・映画","本・漫画","旅行","ビジネス","テクノロジー","社会貢献","その他"]
+  end
+
   def project_params
     params
       .require(:project).permit(:project_name, :brand_name, :category, :main_image, :youtube_url, :description, :period_date)

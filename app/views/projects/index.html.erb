@@ -15,8 +15,7 @@
           <% end %>
           <%= search_form_for @q do |f| %><br/>
           <!-- カテゴリーで検索 -->
-          <%= f.label :category_cont, "カテゴリーから検索する", class: "control-label"  %>
-          <%= f.select :category_cont,["選択してください", "アート","写真","プロダクト","スポーツ","お笑い","ファッション","ダンス","演劇・舞台","映像・映画","本・漫画","旅行","ビジネス","テクノロジー","社会貢献","その他"], class: "form-control" %>
+          <%= f.select :category_cont, @categories, include_blank: 'カテゴリーから検索する', class: "form-control" %>
           <%= f.submit "検索する", class: "btn btn-sm btn-primary form-control" %>
           <% end %>
       </div>

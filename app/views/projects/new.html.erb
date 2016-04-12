@@ -10,7 +10,7 @@
     <%= simple_form_for(@project) do |f| %>
     <!-- error messages -->
     <%= f.error_notification %>
-      <%= f.input :category, as: :select, collection: @categories, include_blank: '選択してください', label: 'ブランド名' %></br>
+      <%= f.input :category, as: :select, collection: @categories, include_blank: '選択してください', label: 'カテゴリー' %></br>
       <%= f.input :brand_name, label: 'ブランド名', error: 'プロジェクト名は必須です' %><br/>
 
       <%= f.input :project_name,label: 'プロジェクト名', error: 'Username is mandatory, please specify one', :placeholder => "(例) 新感覚デニムを一からつくる！" %><br/>

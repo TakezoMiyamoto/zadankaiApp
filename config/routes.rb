@@ -1,13 +1,15 @@
 Rails.application.routes.draw do
 
-  devise_for :users, :controllers => {
-    :sessions      => "users/sessions",
-    :registrations => "users/registrations",
-    :passwords     => "users/passwords",
-    :omniauth_callbacks => "users/omniauth_callbacks"
-  }
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+  mount Ckeditor::Engine => '/ckeditor'
+  root 'zadankai#home'
+  get 'zadankai/about'
+  get 'zadankai/term'
+  get 'zadankai/privacy'
 
-  resources :users, except: [:index]
+  get 'projects/readyfor'
+  get 'projects/new'
 
   resources :projects do
     get 'page/:page', :action => :index, :on => :collection
@@ -19,21 +21,14 @@ Rails.application.routes.draw do
 
   resources :relationships, only: [:create, :destroy]
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
-  mount Ckeditor::Engine => '/ckeditor'
+  devise_for :users, :controllers => {
+    :sessions      => "users/sessions",
+    :registrations => "users/registrations",
+    :passwords     => "users/passwords",
+    :omniauth_callbacks => "users/omniauth_callbacks"
+  }
 
-  get 'projects/readyfor'
-  get 'projects/new'
-
-  get 'zadankai/about'
-  get 'zadankai/term'
-  get 'zadankai/privacy'
-
-
-
-  root 'zadankai#home'
-
+  resources :users, except: [:index]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

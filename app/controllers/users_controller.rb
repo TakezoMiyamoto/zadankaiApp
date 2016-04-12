@@ -29,7 +29,8 @@ class UsersController < ApplicationController
       flash[:success] = "プロフィールは更新されました"
       redirect_to @user
     else
-      render 'zadankai/home'
+      flash[:danger] = "プロフィールの更新に失敗しました"
+      redirect_to user_path(current_user.id)
     end
   end
 

@@ -6,29 +6,24 @@
 <h1 style="text-align: center;">プロジェクトを作成する</h1>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3 form-group">
-    <%= form_for(@project) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
-      <%= f.label :category, "カテゴリー" %>
-      <%= f.select :category,
-              ["アート","写真","プロダクト","スポーツ","お笑い","ファッション","ダンス","演劇・舞台","映像・映画","本・漫画","旅行","ビジネス","テクノロジー","社会貢献","その他"], { include_blank: '選択してください'} , class: "form-control" %></br>
-      <%= f.label :brand_name, "ブランド名" %>
-      <%= f.text_field :brand_name, class: "form-control" %><br/>
+  <div class="col-md-6 col-md-offset-3">
+    <%= simple_form_for(@project) do |f| %>
+    <!-- error messages -->
+    <%= f.error_notification %>
+      <%= f.input :category, as: :select, collection: @categories, include_blank: '選択してください', label: 'ブランド名' %></br>
+      <%= f.input :brand_name, label: 'ブランド名', error: 'プロジェクト名は必須です' %><br/>
 
-      <%= f.label :project_name, "プロジェクト名" %>
-      <%= f.text_field :project_name, :placeholder => "(例) 新感覚デニムを一からつくる！" , class: "form-control" %><br/>
+      <%= f.input :project_name,label: 'プロジェクト名', error: 'Username is mandatory, please specify one', :placeholder => "(例) 新感覚デニムを一からつくる！" %><br/>
 
       <%= f.label :period_date, "プロジェクト終了予定日" %>
-      <div class='input-group date datepicker'>
+      <div class='input-group date datepicker form-horizontal'>
         <%= f.text_field :period_date, :placeholder => "(例)2015-01-01-12:00", class: 'form-control datepicker' %>
       <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
       </div><br/>
 
-      <%= f.label :main_image, "メイン画像" %>
-      <%= f.file_field :main_image, class: "form-control" %><br/>
+      <%= f.input :main_image, as: :file, label: 'メイン画像', class: "form-control" %><br/>
 
-      <%= f.label :youtube_url, "Youtube動画 URL" %>
-      <%= f.text_field :youtube_url, :placeholder => "https://www.youtube.com/watch?v=xxxxxxxxxxx" ,class: "form-control" %></br>
+      <%= f.input :youtube_url, as: :text, label: 'Youtube動画 URL',:placeholder => "https://www.youtube.com/watch?v=xxxxxxxxxxx" %></br>
 
       <%= f.label :description, "プロジェクト詳細",  class: 'control-label' %>
       <%= f.cktext_area :description, class: 'form-control' %><br/>

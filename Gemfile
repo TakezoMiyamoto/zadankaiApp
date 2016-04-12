@@ -57,6 +57,9 @@ gem 'activeadmin', github: 'gregbell/active_admin'
 # ページ
 gem 'kaminari'
 
+# form
+gem 'simple_form'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

@@ -20,6 +20,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @categories = ["アート","写真","プロダクト","スポーツ","お笑い","ファッション","ダンス","演劇・舞台","映像・映画","本・漫画","旅行","ビジネス","テクノロジー","社会貢献","その他"]
     @title = "新規プロジェクト作成"
   end
 
@@ -29,8 +30,7 @@ class ProjectsController < ApplicationController
       flash[:success] = "新規プロジェクトを作成しました"
       redirect_to projects_path
     else
-      flash[:danger] = "プロジェクト作成に失敗しました。"
-      render 'projects/readyfor'
+      render 'new'
     end
   end
 
@@ -62,7 +62,7 @@ class ProjectsController < ApplicationController
       flash[:success] = "プロジェクト内容が更新されました"
       redirect_to @project
     else
-      render 'zadankai/home'
+      render 'edit'
     end
   end
 

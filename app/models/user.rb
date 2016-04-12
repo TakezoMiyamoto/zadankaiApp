@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
 
 
   # validation;
-  
+  validates :username, presence: true
 
   # relationships methods
   # プロジェクトにジョインする

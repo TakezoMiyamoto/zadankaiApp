@@ -8,10 +8,10 @@
     <div class="col-xs-4 col-xs-offset-4 edit_profile">
       <h2 style="text-align: center;">プロフィール編集</h2>
 
-      <%= form_for(@user) do |f| %>
+      <%= simple_form_for(@user) do |f| %>
+      <%= f.error_notification %>
         <div class="field">
-          <%= f.label :username, "お名前" %> <em>(最大6文字)</em><br>
-          <%= f.text_field :username, autofocus: true, class: 'input form-control' %>
+          <%= f.input :username, label:'お名前',autofocus: true, class: 'input form-control' %><em>(最大6文字)</em>
         </div><br/>
 
         <div class="field">

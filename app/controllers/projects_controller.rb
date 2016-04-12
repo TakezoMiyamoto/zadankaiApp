@@ -20,6 +20,7 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    @categories = ["アート","写真","プロダクト","スポーツ","お笑い","ファッション","ダンス","演劇・舞台","映像・映画","本・漫画","旅行","ビジネス","テクノロジー","社会貢献","その他"]
     @title = "新規プロジェクト作成"
   end
 

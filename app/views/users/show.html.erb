@@ -7,10 +7,14 @@
     <div class="row">
         <div class="col-md-3 user-profile">
             <h4><%= @user.username %></h4>
-            <% if @user.remote_avatar != nil %>
+            <!-- image -->
+            <% if @user.avatar.url == nil && @user.remote_avatar == nil %>
+                <p><%= link_to image_tag("/images/user.jpg" , alt: "あかん"), user_path(@user) %></p>
+            <% elsif @user.remote_avatar != nil && @user.avatar.url == nil %>
                 <p><%= link_to image_tag(@user.remote_avatar , alt: @user.username), user_path(@user) %></p>
             <% else %>
                 <p><%= link_to image_tag(@user.avatar.url , alt: @user.username), user_path(@user) %></p>
+
             <% end %>
             <p>自分のプロジェクト  <%= @projects.length %>個</p>
             <p>参加しているプロジェクト  <%= @joinProjects.length %>個</p>

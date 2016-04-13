@@ -313,9 +313,15 @@
 }
 
 /* search */
-.search-btn {
-  background-image: url(/images/FindSearch.png);
-  width: 20px;
-  height: 20px
+.search {
+  width: 250px;
 }
 
+.searchBtn {
+  float: right;
+}
+.form-control-inline {
+width:auto;
+display:inline-block;
+width: 174px;
+}

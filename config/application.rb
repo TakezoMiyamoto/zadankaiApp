@@ -1,5 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
+# Ransack can use simple form
+ENV['RANSACK_FORM_BUILDER'] = '::SimpleForm::FormBuilder' # この行を追加
 require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
@@ -24,12 +26,14 @@ module ZadankaiApp
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.i18n.default_locale = :ja
-    
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.precompile += Ckeditor.assets
     config.assets.precompile += %w( ckeditor/* )
     config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+
+
+
 
   end
 end

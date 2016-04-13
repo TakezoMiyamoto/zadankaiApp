@@ -14,7 +14,6 @@
                 <p><%= link_to image_tag(@user.remote_avatar , alt: @user.username), user_path(@user) %></p>
             <% else %>
                 <p><%= link_to image_tag(@user.avatar.url , alt: @user.username), user_path(@user) %></p>
-
             <% end %>
             <p>自分のプロジェクト  <%= @projects.length %>個</p>
             <p>参加しているプロジェクト  <%= @joinProjects.length %>個</p>

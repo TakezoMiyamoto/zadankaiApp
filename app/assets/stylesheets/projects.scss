@@ -325,3 +325,58 @@ width:auto;
 display:inline-block;
 width: 174px;
 }
+
+
+.form-inline {
+  display: inline;
+}
+
+/* 実験 */
+.search {
+    width: 100%;
+    height: 100%;
+    padding: 18px 0;
+    background-color: #FFF;
+}
+.search__icons {
+    padding-left: 15px;
+    text-align: center;
+}
+
+.search__item {
+    display: inline;
+    margin: 0 5px;
+}
+.btn.btn-post {
+    color: #ffffff;
+    font-weight: bold;
+    background-color: #40CA82;
+}
+.search__item_select {
+    display: inline-block;
+    border-radius: 10px;
+    background-color: white;
+}
+
+#search__item_select {
+    display: inline-block;
+    border-radius: 10px;
+    background-color: white;
+}
+.form__search {
+    display: inline;
+}
+#keyword {
+    background-color: white;
+    border-radius: 10px;
+    outline: none;
+    padding: 0 50px 0 20px;
+    width: 200px;
+}
+.form__search .form__search-icon {
+    position: relative;
+    background-image: url(/images/find50.png);
+    right: 45px;
+    height: 15px;
+    outline: none;
+}

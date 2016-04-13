@@ -24,7 +24,7 @@
 
       <%= f.input :main_image, as: :file, label: 'メイン画像', class: "form-control" %><br/>
 
-      <%= f.input :youtube_url, as: :text, label: 'Youtube動画 URL',:placeholder => "https://www.youtube.com/watch?v=xxxxxxxxxxx" %></br>
+      <%= f.input :youtube_url, as: :url, label: 'Youtube動画 URL',:placeholder => "https://www.youtube.com/watch?v=xxxxxxxxxxx" %></br>
 
       <%= f.label :description, "プロジェクト詳細",  class: 'control-label' %>
       <%= f.cktext_area :description, class: 'form-control' %><br/>

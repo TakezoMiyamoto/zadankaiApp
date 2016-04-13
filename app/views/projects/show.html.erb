@@ -5,18 +5,19 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-2 projrct-user-profile">
+    <div class="col-sm-2 project-user-profile">
       <% if @project.brand_name.present? %>
-      <h4><%= @project.brand_name %></h4>
+        <h4><%= @project.brand_name %></h4>
       <% end %>
       <% if @project.user != nil %>
       <h4><%= @project.user.username %></h4>
-        <% if @project.user.remote_avatar != nil %>
-          <%= image_tag(@project.user.remote_avatar , alt: @project.user.username) %>
-        <% elsif @project.user.remote_avatar == nil && @pfoject.user.avatar == nil%>
-          <%=  %>
+        <!-- image -->
+        <% if @project.user.avatar.url == nil && @project.user.remote_avatar == nil %>
+          <%= link_to image_tag("/images/user.jpg" , alt: "No Image"), user_path(@project.user) %>
+        <% elsif @project.user.remote_avatar != nil && @project.user.avatar.url == nil %>
+          <%= link_to image_tag(@project.user.remote_avatar.url , alt: @project.user.username), user_path(@project.user) %>
         <% else %>
-          <%= image_tag(@project.user.avatar.url , alt: @project.user.username) %>
+          <%= link_to image_tag(@project.user.avatar.url , alt: @project.user.username), user_path(@project.user) %>
         <% end %>
       <% end %>
       <h5>プロジェクト完了予定日</h5>

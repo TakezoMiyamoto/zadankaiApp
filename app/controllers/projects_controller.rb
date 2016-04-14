@@ -16,6 +16,8 @@ class ProjectsController < ApplicationController
     @searchedProjects = @q.result(distinct: true)
 
     @title = "プロジェクト一覧"
+
+
   end
 
 

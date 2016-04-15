@@ -2,6 +2,8 @@ class ConferencesController < ApplicationController
     before_action :authenticate_user!, only: [:index, :new, :create, :show, :destroy, :edit, :update, :destroy]
     before_action :conference_owner, only: [:edit, :update, :destroy]
 
+    require 'date'
+
     def index
         @project = Project.find(params[:project_id])
         redirect_to @project
@@ -38,17 +40,14 @@ class ConferencesController < ApplicationController
             @conference_title = @conference.title
         end
 
+
     end
 
     def edit
         @conferences = Conference.all
         @project = Project.find(params[:project_id])
+        @conference = @project.conferences.find(params[:id])
 
-        if @conference = Conference.find_by(params[:id]) == nil
-            redirect_to @project
-        else
-            @conference = Conference.find_by(params[:id])
-        end
     end
 
     def update
@@ -56,7 +55,7 @@ class ConferencesController < ApplicationController
         @conference = Conference.find(params[:id])
         if @conference.update(edit_conference_params)
           flash[:success] = "座談会情報を更新しました！"
-          redirect_to @conference
+          redirect_to @project
         else
           render 'edit'
         end
@@ -74,11 +73,11 @@ class ConferencesController < ApplicationController
     private
 
     def conference_params
-        params.require(:conference).permit(:title, :description, :youtube_url, :period_date)
+        params.require(:conference).permit(:title, :description, :youtube_url, :conf_date)
     end
 
     def edit_conference_params
-        params.require(:conference).permit(:title, :description, :youtube_url, :period_date)
+        params.require(:conference).permit(:title, :description, :youtube_url, :conf_date)
     end
 
     def conference_owner

@@ -26,7 +26,7 @@
       </div><br/>
       <div>
         <% if current_user == @project.user && current_user != nil %>
-            <%= link_to "座談会内容の編集", edit_project_conference_path(@project, @conference), class: "btn btn-large btn-default" %>
+            <%= link_to "座談会内容の編集", edit_project_conference_path(@project,@conference), class: "btn btn-large btn-default" %>
         <% end %>
       </div><br/>
 

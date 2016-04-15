@@ -52,6 +52,7 @@ class ProjectsController < ApplicationController
     if @project.period_date.present?
     @d2 = (@project.period_date - @d1).to_i / 1.day
     end
+
   end
 
   def edit

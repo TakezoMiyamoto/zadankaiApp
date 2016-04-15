@@ -9,3 +9,22 @@
       </p>
     </div><!-- /.container -->
 </div><!-- /.jumbotron -->
+<div id="readyfor-contents" class="container">
+  <h2>使い方はかんたん。<br/>
+  プロジェクトを作成してスタートするだけ。</h2>
+  <div class="row">
+    <div class="col-md-4">
+      <h4>1. プロジェクトを作成</h4>
+    </div>
+    <div class="col-md-4">
+      <h4>2. 座談会を開催して、プロジェクトを創り上げていく。</h4>
+    </div>
+    <div class="col-md-4">
+      <h4>3. プロジェクト完了報告！</h4>
+    </div>
+  </div>
+  <% if user_signed_in?  %>
+    <p><%= link_to "プロジェクトを作成する", projects_new_path, class: "btn btn-large btn-primary" %></p>
+  <% else %>
+    <p><%= link_to "まずは新規会員登録する", new_user_registration_path, class: "post btn btn-large btn-primary" %></p>
+  <% end %>

@@ -14,7 +14,15 @@
         <div class="detail">
           <p class="title">
             <%= project.project_name %>
-          </p>
+            <!-- period date -->
+            <%if ((project.period_date - Time.zone.now).to_i / 1.day) >= 0 %>
+              <h5 class="date">あと<strong><%= (project.period_date - Time.zone.now).to_i / 1.day %></strong>日</h5>
+            <% else %>
+            <h5 class="date"><strong>終了</strong></h5>
+            <% end %>
+        </div>
+        <div class="action clearfix">
+          <%= link_to "#{project.category}", project , class: "btn-have btn btn-warning btn-sm" %>
         </div>
       </div>
     <% end %>

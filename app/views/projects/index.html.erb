@@ -4,27 +4,31 @@
 <% end %>
 
 <div class="container">
-<div class="row">
-  <div class="col-xs-6 col-xs-offset-3">
-    <form class="form-inline">
-      <div class="form-group">
-          <%= search_form_for @q, :builder => SimpleForm::FormBuilder do |f| %>
-          <!-- start 特定の文字列で始まる商品名で検索 -->
-          <%= f.search_field :project_name_cont, class: "form-control", placeholder: "好きな言葉をここに" %>
-          <%= f.submit "検索する", class: "btn btn-sm btn-info form-control" %>
-          <% end %>
-      </div>
-      <div class="form-group">
-          <%= search_form_for @q do |f| %><br/>
+  <!-- 検索フィールド -->
+   <div class="search">
+     <div class="search__icons">
+        <span class="search__item search__item1">
+          <%= search_form_for @q, html: { id: 'search__item_select', class: 'search__item_select' } do |f| %><br/>
+          <div class="search__item_select">
           <!-- カテゴリーで検索 -->
-          <%= f.select :category_cont, options_for_select(@categories), {include_blank: 'カテゴリーから検索'}, {class: "form-control form-control-inline search"} %>
-          <%= f.submit "検索する", class: "btn btn-sm btn-info" %>
+            <%= f.select :category_cont, options_for_select(@categories), {include_blank: 'カテゴリーから検索'}, {class: "search__item_select"} %>
+            <%= f.submit "検索する", class: "btn btn-sm btn-info" %>
+            <% end %>
+          </div>
+        </span>
+
+        <span class="search__item form__search">
+          <%= search_form_for @q, html: { id: 'search__item_select', class: 'form__search' } do |f| %>
+          <!-- start 特定の文字列で始まる商品名で検索 -->
+            <%= f.search_field :project_name_cont, id:'keyword',class: "form-control form-control-inline", placeholder: "好きな言葉をここに" %>
+            <%= f.submit "検索する", id:'search',class: "btn btn-sm btn-info" %>
           <% end %>
+        </span>
       </div>
-    </form>
-  </div>
-  </div>
+   </div>
 </div><!-- container -->
+ 
+
 
 
   <% if @q == nil %>

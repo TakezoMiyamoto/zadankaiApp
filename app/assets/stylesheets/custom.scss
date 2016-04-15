@@ -293,9 +293,13 @@ body {
         margin-top: 40px;
     }
     
+    h5 {
+        text-align: center;
+        margin-top: 140px;
+    }
     p {
         text-align: center;
-        margin-top: 120px;
+        margin-top: 0px;
     }
 }
 
@@ -507,4 +511,18 @@ body {
 }
 
 
-
+/* circle number */
+span.step {
+  background: #5bc0de;
+  border-color: #46b8da;
+  border-radius: 0.8em;
+  -moz-border-radius: 0.8em;
+  -webkit-border-radius: 0.8em;
+  color: #ffffff;
+  display: inline-block;
+  font-weight: bold;
+  line-height: 1.6em;
+  margin-right: 5px;
+  text-align: center;
+  width: 1.6em;
+}

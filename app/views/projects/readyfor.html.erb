@@ -17,19 +17,19 @@
   プロジェクトを作成してスタートするだけ。</h2>
   <div class="row">
     <div class="col-md-4">
-      <h4>1. プロジェクトを作成</h4>
+      <h4><span class="step">1</span> プロジェクトを作成</h4>
     </div>
     <div class="col-md-4">
-      <h4>2. 座談会を開催して、プロジェクトを創り上げていく。</h4>
+      <h4><span class="step">2</span> 座談会を開催して、プロジェクトを創り上げていく。</h4>
     </div>
     <div class="col-md-4">
-      <h4>3. プロジェクト完了報告！</h4>
+      <h4><span class="step">3</span> プロジェクト完了報告！</h4>
     </div>
   </div>
   <% if user_signed_in?  %>
-    <p><%= link_to "プロジェクトを作成する", projects_new_path, class: "btn btn-large btn-primary" %></p>
+    <h5><%= link_to "プロジェクトを作成する", projects_new_path, class: "btn btn-large btn-info" %></h5>
   <% else %>
-    <p><%= link_to "まずは新規会員登録する", new_user_registration_path, class: "post btn btn-large btn-primary" %></p>
+    <h5><%= link_to "まずは新規会員登録する", new_user_registration_path, class: "post btn btn-large btn-info" %></h5>
   <% end %>
 </div>
 <div id="about" class="container">
@@ -39,7 +39,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-6">
-      
+      <!-- 写真か何かを入れる -->
     </div>
     <div class="col-md-6">
       <h2>Zadankaiとは？</h2>

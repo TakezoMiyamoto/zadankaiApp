@@ -14,17 +14,37 @@
   プロジェクトを作成してスタートするだけ。</h2>
   <div class="row">
     <div class="col-md-4">
-      <h4>1. プロジェクトを作成</h4>
+      <h4><span class="step">1</span> 参加する</h4>
+      <p>興味のあるプロジェクトに<br/>参加してみよう！</p>
     </div>
     <div class="col-md-4">
-      <h4>2. 座談会を開催して、プロジェクトを創り上げていく。</h4>
+      <h4><span class="step">2</span> アイデアを出す</h4>
+      <p>座談会に参加して<br/>自分のアイデアを共有しよう！</p>
     </div>
     <div class="col-md-4">
-      <h4>3. プロジェクト完了報告！</h4>
+      <h4><span class="step">3</span> カタチになる！</h4>
+      <p>じぶんのアイデアが採用されて<br/>商品に反映されるかも！？</p>
     </div>
   </div>
-  <% if user_signed_in?  %>
-    <p><%= link_to "プロジェクトを作成する", projects_new_path, class: "btn btn-large btn-primary" %></p>
-  <% else %>
-    <p><%= link_to "まずは新規会員登録する", new_user_registration_path, class: "post btn btn-large btn-primary" %></p>
-  <% end %>
+  <h5><%= link_to "プロジェクトを探しにいく", projects_path, class: "btn btn-large btn-info" %></h5>
+</div>
+
+<div id="about-zadankai">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <!-- 写真か何かを入れる -->
+      </div>
+      <div class="col-md-6">
+        <h2>Zadankaiとは？</h2>
+        <p>こんなものを創りたい。こんなイベントを企画したい。なにか楽しいことをしたい。<br/>
+        そういったあなたの心の中にある思いを形にするお手伝いをしたい。<br/>
+        そんな思いから、この「Zadankai」はスタートしました。<br/>
+        気軽に心の中の想いをシェアして、それに賛同してくれる仲間（ファン）に出会い、企画を実現させる。<br/>
+        どんどんアイデアをシェアしよう。そのアイデアをみんなで育てて実現させよう。<br/>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>

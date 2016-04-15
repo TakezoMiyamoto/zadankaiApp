@@ -1,7 +1,7 @@
     <h4>開かれてる座談会</h4>
     <% if @project.conferences.present? %>
       <div class="panel panel-info">
-        <% @project.conferences.order("created_at asc").each do |conference| %>
+        <% @project.conferences.order("created_at desc").each do |conference| %>
           <div class="panel-heading">
 
           </div>

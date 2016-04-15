@@ -33,7 +33,7 @@
       <section class="comment_form">
           <%= render 'shared/opinion_form' %>
       </section>
-      <h3>コメント一覧</h3>
+      <h3>コメント一覧 (<%= @conference.opinions.count %>)</h3>
       <% if @conference.opinions.count == 0 %>
         <p>現在コメントはありません。</p>
       <% end %>

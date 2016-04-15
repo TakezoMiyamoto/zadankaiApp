@@ -61,7 +61,7 @@
           <%= render 'shared/comment_form' %>
       </section>
       <% end %>
-      <h3>コメント一覧</h3>
+      <h3>コメント一覧 (<%= @project.comments.count %>)</h3>
       <% if @project.comments.count == 0 %>
         <p>現在コメントはありません。</p>
       <% end %>

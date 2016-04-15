@@ -13,7 +13,7 @@
       <div class="title">
         <h2><%= @conference.title %></h2>
       </div>
-      <% if @project.youtube_url.present? %>
+      <% if @conference.youtube_url.present? %>
         <div class= "youtube-container">
           <%= embed(@conference.youtube_url) %>
         </div>

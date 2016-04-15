@@ -23,8 +23,13 @@
       <div>
         <h3>内容</h3>
         <%== @conference.description %>
-      </div>
-      
+      </div><br/>
+      <div>
+        <% if current_user == @project.user && current_user != nil %>
+            <%= link_to "座談会内容の編集", edit_project_conference_path(@project, @conference), class: "btn btn-large btn-default" %>
+        <% end %>
+      </div><br/>
+
       <section class="comment_form">
           <%= render 'shared/opinion_form' %>
       </section>

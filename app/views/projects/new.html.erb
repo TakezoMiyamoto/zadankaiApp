@@ -3,8 +3,6 @@
   <meta name="description" content="新しいプロジェクトを作成しよう">
 <% end %>
 
-
-
 <div class="row">
   <div class="col-md-6 col-md-offset-3 edit-project">
   <h1 style="text-align: center;">プロジェクトを作成する</h1>
@@ -14,7 +12,7 @@
       <%= f.input :category, as: :select, collection: @categories, include_blank: '選択してください', label: 'カテゴリー' %></br>
       <%= f.input :brand_name, label: 'ブランド名', error: 'プロジェクト名は必須です' %><br/>
 
-      <%= f.input :project_name,label: 'プロジェクト名', error: 'Username is mandatory, please specify one', :placeholder => "(例) 新感覚デニムを一からつくる！" %><br/>
+      <%= f.input :project_name,label: 'プロジェクト名', error: 'プロジェクト名は必須です。', :placeholder => "(例) 新感覚デニムを一からつくる！" %><br/>
 
       <%= f.label :period_date, "プロジェクト終了予定日" %>
       <div class='input-group date datepicker form-horizontal'>

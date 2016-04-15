@@ -3,10 +3,19 @@
       <div class="panel panel-info">
         <% @project.conferences.order("created_at desc").each do |conference| %>
           <div class="panel-heading">
-            <p><%= conference.created_at.to_s(:default) %></p>
+
           </div>
           <div class="panel-body">
             <p><%= link_to conference.title, project_conference_path(@project, conference) %></p>
+            <% if conference.conf_date.present? %>
+            <%if ((conference.conf_date - Time.zone.now).to_i / 1.day) >= 0 %>
+              <h5 class="date">あと<strong><%= (conference.conf_date - Time.zone.now).to_i / 1.day %></strong>日</h5>
+            <% else %>
+            <h5 class="date"><strong>終了</strong></h5>
+            <% end %>
+          <% else %>
+            <% # %>
+          <% end %>
           </div>
         <% end %>
       </div>

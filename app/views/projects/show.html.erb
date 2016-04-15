@@ -61,7 +61,7 @@
           <%= render 'shared/comment_form' %>
       </section>
       <% end %>
-      <h3>コメント一覧</h3>
+      <h3>コメント一覧 (<%= @project.comments.count %>)</h3>
       <% if @project.comments.count == 0 %>
         <p>現在コメントはありません。</p>
       <% end %>
@@ -89,7 +89,7 @@
                   <% end %>
                 <% end %>
                 <!--/ .commentContents-->
-              </div>  
+              </div>
             </div><!-- .comment1-1 -->
           <% else %><!-- その他の人は左表示 -->
             <div class="comment1-1">
@@ -112,7 +112,7 @@
                   <% end %>
                 <% end %>
                 <!--/ .commentContents-->
-              </div> 
+              </div>
             </div><!-- .comment1-1 -->
           <% end %>
        <% end %>
@@ -121,17 +121,17 @@
     <div class="col-sm-3">
       <% if @users.any? %>
       <p>プロジェクトメンバー数: <strong><%= @users.length %></strong>人</p>
-        
+
       <% end %>
-      
+
       <% if current_user == @project.user && current_user != nil %>
       <div>
-          <%= link_to "座談会を開催する！" , new_project_conference_path(@project),class: "btn btn-large btn-primary" %>
+          <%= link_to "座談会を開催する！" , new_project_conference_path(@project),class: "btn btn-large btn-info" %>
       </div><br/>
       <% else %>
         <%  %>
       <% end %>
-      
+
       <% if current_user != nil %>
         <% if @joinerUser != nil %>
           <% if @users.include? current_user %>
@@ -139,7 +139,7 @@
           <% elsif current_user == @project.user %>
             <%= render 'conference_list' %>
           <% else %>
-            <% # %> 
+            <% # %>
           <% end %>
         <% elsif current_user == @project.user %>
           <%= render 'conference_list' %>

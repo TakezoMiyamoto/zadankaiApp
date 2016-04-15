@@ -20,7 +20,7 @@ class ConferencesController < ApplicationController
           flash[:success] = "座談会を作成しました！"
           redirect_to project_path(@project)
         else
-          render 'zadankai/home'
+          render 'new'
         end
     end
 

@@ -12,12 +12,12 @@
       <% if @project.user != nil %>
       <h4><%= @project.user.username %></h4>
         <!-- image -->
-        <% if @project.user.avatar.url == nil && @project.user.remote_avatar == nil %>
+        <% if @project.user.avatar == nil && @project.user.remote_avatar == nil %>
           <%= link_to image_tag("/images/user.jpg" , alt: "No Image"), user_path(@project.user) %>
-        <% elsif @project.user.remote_avatar != nil && @project.user.avatar.url == nil %>
-          <%= link_to image_tag(@project.user.remote_avatar.url , alt: @project.user.username), user_path(@project.user) %>
+        <% elsif @project.user.remote_avatar != nil && @project.user.avatar == nil %>
+          <%= link_to image_tag(@project.user.remote_avatar , alt: @project.user.username), user_path(@project.user) %>
         <% else %>
-          <%= link_to image_tag(@project.user.avatar.url , alt: @project.user.username), user_path(@project.user) %>
+          <%= link_to image_tag(@project.user.avatar , alt: @project.user.username), user_path(@project.user) %>
         <% end %>
       <% end %>
       <h5>プロジェクト完了予定日</h5>

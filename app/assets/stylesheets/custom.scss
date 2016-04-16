@@ -189,6 +189,8 @@ body {
 
     .resizeimage {
         width: 100%;
+        max-width: 500px; /* 最大幅 */
+        min-width: 240px; /* 最小幅 */
     }
     h1 {
         font-family: 'Poiret One', cursive;

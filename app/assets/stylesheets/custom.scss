@@ -16,7 +16,7 @@ html {
 body {
     font-family: "Open Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
     padding-top: 70px;
-    margin-bottom: 100px;
+    margin-bottom: 110px;
     min-height: 1800px;
     background-color: #FFF;
     font-size: 15px;
@@ -186,7 +186,10 @@ body {
         background-size: cover;
         background-position: center 60%;
         background-repeat: no-repeat;
-        
+
+    .resizeimage {
+        width: 100%;
+    }
     h1 {
         font-family: 'Poiret One', cursive;
         font-weight: bold;

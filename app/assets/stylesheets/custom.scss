@@ -16,7 +16,7 @@ html {
 body {
     font-family: "Open Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
     padding-top: 70px;
-    margin-bottom: 110px;
+    margin-bottom: 120px;
     min-height: 1800px;
     background-color: #FFF;
     font-size: 15px;
@@ -189,6 +189,8 @@ body {
 
     .resizeimage {
         width: 100%;
+        max-width: 500px; /* 最大幅 */
+        min-width: 240px; /* 最小幅 */
     }
     h1 {
         font-family: 'Poiret One', cursive;
@@ -335,99 +337,106 @@ body {
   -webkit-border-radius: 40px;
   -moz-border-radius: 40px;
   }
-  
-  
-.comment1-1  {  
-    width: 652.5px;  
-    padding: 0 10px;  
-    margin-bottom: 20px;  
-    position: relative;  
-}  
-.comment1-1 .imgL    {  
-    float: left;  
-    text-align: center; 
-    
-}  
-.comment1-1 .imgL img    {  
-     
-    padding: 3px;  
-    margin-bottom: 5px; 
-    width: 60px;
-    height: 60px;
-    display: table-cell;
-    border-radius: 60px;
-  -webkit-border-radius: 60px;
-  -moz-border-radius: 60px;
-}  
-.comment1-1 .commentContents {  
-    width: 550px;  
-    float: right;  
-    background: #EEE;  
-    border: 1px solid #CCC;  
-    border-radius: 5px;
-    padding: 12px 19px;  
-    margin-left: 5px;
-}  
-.comment1-1 .commentContents p   {  
-    margin-bottom: 1.2em;  
-}  
-.comment1-1 p.img    {  
-    position: absolute;  
-    left: 110px;  
-    top: 20px;  
-}  
-.comment1-1 p.data   {  
-    color: #999;  
-    text-align: right;  
-    margin-bottom:0;  
-}  
-.comment1-1:after    { height:0; visibility: hidden; content: ".";   display: block; clear: both; }  
 
-.comment2-1  {  
-    width: 652.5px;  
-    padding: 0 10px;  
-    margin-bottom: 20px;  
-    position: relative;  
-}  
-.comment2-1 .imgL    {  
-    float: right;
-    text-align: center; 
-    
-}  
-.comment2-1 .imgL img    {  
-     
-    padding: 3px;  
-    margin-bottom: 5px; 
+.comment1-1  {
+    max-width: 652.5px;
+    min-width: 370px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.comment1-1 .imgL    {
+    float: left;
+    text-align: center;
+}
+.comment1-1 .imgL img    {
+    padding: 3px;
+    margin-bottom: 5px;
     width: 60px;
     height: 60px;
     display: table-cell;
     border-radius: 60px;
   -webkit-border-radius: 60px;
   -moz-border-radius: 60px;
-}  
-.comment2-1 .commentContents {  
-    width: 550px;  
-    float: left;  
-    background: #EEE;  
-    border: 1px solid #CCC;  
+}
+.comment1-1 .commentContents {
+    max-width: 550px;
+    min-width: 285px;
+    float: right;
+    background: #EEE;
+    border: 1px solid #CCC;
     border-radius: 5px;
-    padding: 12px 19px;  
+    padding: 12px 19px;
     margin-left: 5px;
-}  
-.comment2-1 .commentContents p   {  
-    margin-bottom: 1.2em;  
-}  
-.comment2-1 p.img    {  
-    position: absolute;  
-    right: 110px;  
-    top: 20px;  
-}  
-.comment2-1 p.data   {  
-    color: #999;  
-    text-align: right;  
-    margin-bottom:0;  
-}  
-.comment2-1:after    { height:0; visibility: hidden; content: ".";   display: block; clear: both; }  
+}
+.comment1-1 .commentContents p {
+    margin-bottom: 1.2em;
+}
+.comment1-1 p.img    {
+    position: absolute;
+    left: 110px;
+    top: 20px;
+}
+.comment1-1 p.data   {
+    color: #999;
+    text-align: right;
+    margin-bottom:0;
+}
+.comment1-1:after    {
+    height:0;
+    visibility: hidden;
+    content: ".";
+    display: block;
+    clear: both; }
+
+.comment2-1  {
+    width: 652.5px;
+    padding: 0 10px;
+    margin-bottom: 20px;
+    position: relative;
+}
+.comment2-1 .imgL   {
+    float: right;
+    text-align: center;
+}
+.comment2-1 .imgL img  {
+    padding: 3px;
+    margin-bottom: 5px;
+    width: 60px;
+    height: 60px;
+    display: table-cell;
+    border-radius: 60px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+}
+.comment2-1 .commentContents {
+    width: 550px;
+    float: left;
+    background: #EEE;
+    border: 1px solid #CCC;
+    border-radius: 5px;
+    padding: 12px 19px;
+    margin-left: 5px;
+}
+.comment2-1 .commentContents p  {
+    margin-bottom: 1.2em;
+}
+.comment2-1 p.img    {
+    position: absolute;
+    right: 110px;
+    top: 20px;
+}
+.comment2-1 p.data  {
+    color: #999;
+    text-align: right;
+    margin-bottom:0;
+}
+.comment2-1:after {
+    height:0;
+    visibility: hidden;
+    content: ".";
+    display: block;
+    clear: both; }
 
 .footer {
     position: absolute;
@@ -496,10 +505,13 @@ body {
 /* term */
 .term-wrapper {
     border: 1px solid #C0C0C0;
-        margin: 80px;
-        border-radius: 5px;
-        box-shadow: 1px 1px 3px #c0c0c0;
-        background-color: #F5F5F5;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #c0c0c0;
+    background-color: #F5F5F5;
+
+    h2 {
+        text-align: center;
+    }
 }
 
 .contents {

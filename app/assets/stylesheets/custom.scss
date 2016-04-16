@@ -16,7 +16,7 @@ html {
 body {
     font-family: "Open Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
     padding-top: 70px;
-    margin-bottom: 110px;
+    margin-bottom: 120px;
     min-height: 1800px;
     background-color: #FFF;
     font-size: 15px;
@@ -498,10 +498,13 @@ body {
 /* term */
 .term-wrapper {
     border: 1px solid #C0C0C0;
-        margin: 80px;
-        border-radius: 5px;
-        box-shadow: 1px 1px 3px #c0c0c0;
-        background-color: #F5F5F5;
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px #c0c0c0;
+    background-color: #F5F5F5;
+
+    h2 {
+        text-align: center;
+    }
 }
 
 .contents {

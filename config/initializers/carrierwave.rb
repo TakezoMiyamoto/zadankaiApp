@@ -19,4 +19,4 @@ CarrierWave.configure do |config|
       config.fog_directory = 'zadankai-app'
       
   end
-end
+end 

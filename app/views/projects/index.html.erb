@@ -32,7 +32,7 @@
 
 
   <% if @q == nil %>
-  <div class="container">
+<div class="container index-project">
     <div class="container">
       <%= render 'projects/list' , projects: @projects %>
       <%= paginate @projects, class: 'pagenation' %>
@@ -40,10 +40,9 @@
   <% else %>
     <div class="container">
       <%= render 'projects/list' , projects: @searchedProjects %>
-      <div class="pagenation"><%= paginate @searchedProjects %><div>
+      <div class="pagenation"><%= paginate @searchedProjects %>
     <% end %>
-  </div>
-  </div>
-</div>
+    </div>
+    </div>
 </div>
 

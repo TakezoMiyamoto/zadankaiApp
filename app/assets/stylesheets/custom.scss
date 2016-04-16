@@ -6,6 +6,7 @@
 @import url("//fonts.googleapis.com/css?family=Pacifico:400,700");
 @import url("//fonts.googleapis.com/css?family=Poiret+One:400,700");
 
+
 html {
   position: relative;
   min-height: 100%;
@@ -15,8 +16,8 @@ html {
 body {
     font-family: "Open Sans", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, sans-serif;
     padding-top: 70px;
-    margin-bottom: 51px;
-    min-height: 1500px;
+    margin-bottom: 100px;
+    min-height: 1800px;
     background-color: #FFF;
     font-size: 15px;
     color: #292F33;
@@ -202,8 +203,9 @@ body {
     }
     
     .btn {
-        margin-top: 280px;
+        margin-top: 180px;
     }
+
 }
 
 #ready-for-jumbotron {
@@ -279,11 +281,10 @@ body {
     background-color: #FFEEFF;
     margin-top: -10px;
     width: 100%;
-    height: 550px;
+    height: 650px;
     margin-bottom: 40px;
     text-align: center;
-    
-    
+
     h2 {
         padding-top: 40px;
         text-align: center;
@@ -295,7 +296,11 @@ body {
     
     h5 {
         text-align: center;
-        margin-top: 140px;
+        margin-top: 70px;
+    }
+
+    h6 {
+        margin-top: 30px;
     }
     p {
         text-align: center;

@@ -392,7 +392,8 @@ body {
     clear: both; }
 
 .comment2-1  {
-    width: 652.5px;
+    max-width: 652.5px;
+    min-width: 370px;
     padding: 0 10px;
     margin-bottom: 20px;
     position: relative;
@@ -412,7 +413,9 @@ body {
   -moz-border-radius: 60px;
 }
 .comment2-1 .commentContents {
-    width: 550px;
+    width: 80%;
+    max-width: 550px;
+    min-width: 285px;
     float: left;
     background: #EEE;
     border: 1px solid #CCC;

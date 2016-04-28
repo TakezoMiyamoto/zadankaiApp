@@ -5,14 +5,14 @@
       <%= f.input :title, label: 'タイトル', error: 'タイトルは必須です。', :placeholder => "タイトルをご記入ください" %>
       <%= f.label :youtube_url, "Youtube動画 URL" %>
       <%= f.text_field :youtube_url, :placeholder => "https://www.youtube.com/watch?v=xxxxxxxxxxx" ,class: "form-control" %></br>
-      <%= f.label :conf_date, "プロジェクト終了予定日" %>
+      <%= f.label :conf_date, "ざだんかい終了予定日" %>
       <div class='input-group date datepicker form-horizontal'>
       <%= f.text_field :conf_date, :placeholder => "(例)2015-01-01-12:00", class: 'form-control datepicker' %>
       <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
       </div><br/>
       <%= f.label :description, "詳細内容", class: 'control-label' %>
       <%= f.cktext_area :description, class: 'form-control' %></br>
-      <%= f.submit "進捗ほうこく作成!", class: "btn btn-large btn-primary form-control" %>
+      <%= f.submit "ざだんかい作成!", class: "btn btn-large btn-primary form-control" %>
 
     </div>
 <% end %>

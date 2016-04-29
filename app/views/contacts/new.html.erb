@@ -13,7 +13,7 @@
       <%= f.input :name, label: 'お名前', error: 'お名前の入力は必須です' %>
       <%= f.input :email, label: 'email', placeholder: 'xxx@example.com', error: 'emailの入力は必須です' %>
       <%= f.input :message, label: 'お問い合わせ内容', error: 'お問い合わせ内容の入力は必須です' %>
-      <%= f.submit class: "btn", :class => "form-control btn-info" %>
+      <%= f.button :submit,'送信する' , :class => "form-control btn-info" %>
     <% end %>
   </div>
 </div>

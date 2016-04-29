@@ -1,23 +1,19 @@
-<div class="container">
+<% content_for :head do %>
+  <meta name="title" content="お問い合わせ">
+  <meta name="description" content="問い合わせはこちらからお願い致します。">
+<% end %>
 
-  <%= form_for @contact do |f| %>
 
-  <div>
-      <%= f.label :name %>
-      <%= f.text_field :name, :class => "form-control" %>
-    </div>
+<div class="row">
+  <div class="col-xs-10 col-xs-offset-1 col-md-6 col-md-offset-3">
 
-  <div>
-      <%= f.label :email %>
-      <%= f.email_field :email, :class => "form-control" %>
-    </div>
-
-  <div>
-      <%= f.label :message %>
-      <%= f.text_area :message, :class => "form-control" %>
-  </div><br/>
-
-  <div>
-         <%= f.submit class: "btn", :class => "form-control btn-info" %>
-  <% end %>
+    <h3 style="text-align: center;">お問い合わせ</h3>
+    <%= simple_form_for @contact do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :name, label: 'お名前', error: 'お名前の入力は必須です' %>
+      <%= f.input :email, label: 'email', placeholder: 'xxx@example.com', error: 'emailの入力は必須です' %>
+      <%= f.input :message, label: 'お問い合わせ内容', error: 'お問い合わせ内容の入力は必須です' %>
+      <%= f.submit class: "btn", :class => "form-control btn-info" %>
+    <% end %>
+  </div>
 </div>

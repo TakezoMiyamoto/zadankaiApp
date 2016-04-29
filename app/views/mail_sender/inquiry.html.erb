@@ -1,5 +1,8 @@
-<h1>MailSender#inquiry</h1>
-
-<p>
-  <%= @greeting %>, find me in app/views/mail_sender/inquiry.html.erb
-</p>
+Webサイトからお問い合わせがありました。<br/>
+  
+--------------------------
+Name: <%= @contact.name %><br/>
+Email: <%= @contact.email %><br/>
+Message:<br/>
+<%= @contact.message %>
+--------------------------

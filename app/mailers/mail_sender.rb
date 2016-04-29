@@ -5,9 +5,9 @@ class MailSender < ApplicationMailer
   #
   #   en.mail_sender.inquiry.subject
   #
-  def inquiry
-    @greeting = "Hi"
+  def inquiry(contact)
+    @contact = contact
 
-    mail to: "to@example.org"
+    mail to: "takezo.m.1987@gmail.com"
   end
 end
